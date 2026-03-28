@@ -28,9 +28,11 @@ export default function WatchPage() {
         const ytId = video?.videoUrl?.match(/embed\/([^?]+)/)?.[1];
         if (ytId && parsed.videoId === ytId) {
           setInitialTime(parsed.timestamp);
+          return;
         }
       }
     } catch (_) {}
+    setInitialTime(0);
   }, [video]);
 
   if (!video || !subjectData) {

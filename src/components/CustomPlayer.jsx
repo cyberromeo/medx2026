@@ -47,6 +47,7 @@ const CustomPlayer = ({
   const onPlayRef = useRef(onPlay);
   const playFiredRef = useRef(false);
   const isInitializedRef = useRef(false);
+  const previousVideoIdRef = useRef(validId);
 
   useEffect(() => { onEndedRef.current = onEnded; }, [onEnded]);
   useEffect(() => { onPlayRef.current = onPlay; }, [onPlay]);
@@ -63,6 +64,7 @@ const CustomPlayer = ({
   const [iphoneDevice, setIphoneDevice] = useState(false);
   const [showActionOverlay, setShowActionOverlay] = useState(false);
   const [controlsVisible, setControlsVisible] = useState(false);
+  const [showIphoneSwitchOverlay, setShowIphoneSwitchOverlay] = useState(false);
   const controlsTimerRef = useRef(null);
 
   /* ── 1. Load YT IFrame API once ── */
@@ -75,6 +77,32 @@ const CustomPlayer = ({
     }
     setIphoneDevice(isIPhone());
   }, []);
+
+  useEffect(() => {
+    const previousVideoId = previousVideoIdRef.current;
+    const switchedVideos = Boolean(previousVideoId && previousVideoId !== validId);
+
+    playFiredRef.current = false;
+    initialSeekDoneRef.current = false;
+    setProgress(0);
+    setCurrentTime(0);
+    setDuration(0);
+    setShowSplash(false);
+    setShowActionOverlay(false);
+    setControlsVisible(false);
+
+    if (iphoneDevice && switchedVideos) {
+      setStatus('loading');
+      setShowIphoneSwitchOverlay(true);
+    } else if (!switchedVideos) {
+      setStatus('idle');
+      setShowIphoneSwitchOverlay(false);
+    } else {
+      setShowIphoneSwitchOverlay(false);
+    }
+
+    previousVideoIdRef.current = validId;
+  }, [validId, iphoneDevice]);
 
   /* ── progress save ── */
   const stateRef = useRef({ currentTime: 0, duration: 0, status: 'idle', title, videoId: validId });
@@ -102,8 +130,6 @@ const CustomPlayer = ({
     // Guard against double-init (React Strict Mode / HMR)
     if (isInitializedRef.current) return;
 
-    const iphone = isIPhone();
-
     const initPlayer = () => {
       const targetEl = document.getElementById(elementId);
       if (!targetEl) {
@@ -128,7 +154,7 @@ const CustomPlayer = ({
             iv_load_policy: 3,
             cc_load_policy: 0,
             enablejsapi: 1,
-            playsinline: iphone ? 0 : 1,
+            playsinline: 1,
             origin: window.location.origin,
             start: initialTime > 0 ? Math.floor(initialTime) : undefined,
           },
@@ -153,6 +179,7 @@ const CustomPlayer = ({
             onStateChange: (event) => {
               if (event.data === window.YT.PlayerState.PLAYING) {
                 setStatus('playing');
+                setShowIphoneSwitchOverlay(false);
                 if (!playFiredRef.current) {
                   playFiredRef.current = true;
                   onPlayRef.current?.();
@@ -161,6 +188,7 @@ const CustomPlayer = ({
               if (event.data === window.YT.PlayerState.PAUSED) setStatus('paused');
               if (event.data === window.YT.PlayerState.ENDED) {
                 setStatus('ended');
+                setShowIphoneSwitchOverlay(false);
                 onEndedRef.current?.();
               }
             },
@@ -321,6 +349,7 @@ const CustomPlayer = ({
   };
 
   const poster = thumbnail || (validId ? `https://img.youtube.com/vi/${validId}/maxresdefault.jpg` : null);
+  const showIdleOverlay = status === 'idle' || showIphoneSwitchOverlay;
 
   if (!validId) {
     return (
@@ -363,7 +392,7 @@ const CustomPlayer = ({
       </div>
 
       {/* ── INTERACTION SHIELD ── */}
-      {status !== 'idle' && (
+      {status !== 'idle' && !showIphoneSwitchOverlay && (
         <div className="medx-player__shield" onClick={() => {
           togglePlay();
           // Show controls briefly on tap (mobile)
@@ -390,7 +419,7 @@ const CustomPlayer = ({
       )}
 
       {/* ── IDLE OVERLAY (poster + play) ── */}
-      {status === 'idle' && (
+      {showIdleOverlay && (
         <div className="medx-player__idle" onClick={handleStartPlay}>
           {poster && (
             <div
@@ -414,7 +443,7 @@ const CustomPlayer = ({
       )}
 
       {/* ── LOADING SPINNER ── */}
-      {status === 'loading' && !showSplash && (
+      {status === 'loading' && !showSplash && !showIphoneSwitchOverlay && (
         <div className="medx-player__loading">
           <div className="medx-player__splash-spinner"></div>
         </div>
