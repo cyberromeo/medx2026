@@ -129,6 +129,7 @@ const CustomPlayer = ({
     if (!validId) return;
     // Guard against double-init (React Strict Mode / HMR)
     if (isInitializedRef.current) return;
+    const iphone = isIPhone();
 
     const initPlayer = () => {
       const targetEl = document.getElementById(elementId);
