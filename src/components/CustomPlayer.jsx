@@ -154,7 +154,7 @@ const CustomPlayer = ({
             iv_load_policy: 3,
             cc_load_policy: 0,
             enablejsapi: 1,
-            playsinline: 1,
+            playsinline: iphone ? 0 : 1,
             origin: window.location.origin,
             start: initialTime > 0 ? Math.floor(initialTime) : undefined,
           },
