@@ -133,17 +133,47 @@ h1, h2, h3, h4, h5, h6,
   font-size: 0.75rem;
 }
 
-/* ── Bauhaus Shadows ── */
+/* ── Bauhaus Shadows & Interaction ── */
 .neo-shadow {
   box-shadow: var(--shadow);
+  transition: all var(--transition-fast);
+}
+
+.neo-shadow:active {
+  transform: translate(6px, 6px);
+  box-shadow: 2px 2px 0px 0px var(--primary);
+}
+
+[data-theme="dark"] .neo-shadow:active {
+  box-shadow: 2px 2px 0px 0px rgba(229, 226, 225, 0.3);
 }
 
 .neo-shadow-sm {
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.neo-shadow-sm:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px 0px var(--primary);
+}
+
+[data-theme="dark"] .neo-shadow-sm:active {
+  box-shadow: 1px 1px 0px 0px rgba(229, 226, 225, 0.3);
 }
 
 .neo-shadow-lg {
   box-shadow: var(--shadow-lg);
+  transition: all var(--transition-fast);
+}
+
+.neo-shadow-lg:active {
+  transform: translate(8px, 8px);
+  box-shadow: 4px 4px 0px 0px var(--primary);
+}
+
+[data-theme="dark"] .neo-shadow-lg:active {
+  box-shadow: 4px 4px 0px 0px rgba(229, 226, 225, 0.3);
 }
 
 /* ── Bauhaus Button Base ── */
@@ -794,6 +824,40 @@ h1, h2, h3, h4, h5, h6,
 .login-page__footer-dot {
   width: 1rem;
   height: 1rem;
+}
+
+.login-page__footer-dot--red { background-color: var(--secondary); }
+.login-page__footer-dot--yellow { background-color: var(--primary-container); }
+.login-page__footer-dot--blue { background-color: var(--tertiary); }
+
+.login-page__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Specific button face for login */
+.login-page__submit-face {
+  background-color: var(--tertiary);
+  color: white;
+}
+
+.login-page__submit-face:hover {
+  background-color: var(--primary-container);
+  color: var(--primary);
+}
+
+.login-page__input--shaking {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
 }
 
 /* Background decorations */
@@ -2189,5 +2253,204 @@ h1, h2, h3, h4, h5, h6,
   .watch-page__sidebar {
     max-height: 42rem;
   }
+}
+
+/* ── Bauhaus Polish: Subject Cards ── */
+.subject-card__inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.subject-card:hover .subject-card__inner {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.subject-card:active .subject-card__inner {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.subject-card__inner--featured {
+  background-color: var(--primary-container);
+}
+
+.subject-card__inner--blue {
+  background-color: var(--tertiary);
+  color: white;
+}
+
+.subject-card__inner--red {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.subject-card__inner--neutral {
+  background-color: var(--surface-container-high);
+}
+
+.subject-card__inner--locked {
+  background-color: var(--bg);
+  border-style: dashed;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none;
+}
+.subject-card--locked:hover .subject-card__inner {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Bauhaus Polish: PYT Accordions ── */
+.pyt-accordion {
+  background: var(--surface-container);
+  border: var(--border);
+  transition: all var(--transition-fast);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.pyt-accordion--expanded {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pyt-accordion__header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pyt-accordion__header:hover {
+  background: var(--surface-container-high);
+}
+
+.pyt-accordion--expanded .pyt-accordion__header {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-bottom: var(--border);
+}
+
+.pyt-accordion__content {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.pyt-topic-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: var(--border-thin);
+  background: var(--surface);
+  margin-bottom: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.pyt-topic-item:hover {
+  transform: translateX(4px);
+  border-color: var(--primary);
+}
+
+.pyt-topic-item--priority {
+  background: var(--secondary-container);
+  border-color: var(--secondary);
+}
+
+[data-theme="dark"] .pyt-topic-item--priority {
+  background: rgba(230, 59, 46, 0.15);
+}
+
+/* ── Bauhaus Polish: Videos Page ── */
+.videos-page--not-found {
+  text-align: center;
+  padding-top: 10rem;
+}
+
+.videos-page__empty-title {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.videos-page__empty-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--on-surface-variant);
+  margin-bottom: 2rem;
+}
+
+.videos-page__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.videos-page__stat-box--accent {
+  background-color: var(--primary-container) !important;
+}
+
+/* ── Bauhaus Polish: Watch Page ── */
+.watch-page--not-found {
+  text-align: center;
+  padding-top: 10rem;
+}
+
+.watch-page__not-found-title {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.watch-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  margin-bottom: 2rem;
+}
+
+.watch-page__back:hover {
+  color: var(--primary);
+}
+
+.watch-page__info-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.watch-page__duration-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  font-weight: 700;
+  color: var(--on-surface-variant);
 }
 

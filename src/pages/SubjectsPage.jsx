@@ -11,7 +11,7 @@ function SubjectCard({ subject, index }) {
     switch (subject.variant) {
       case 'featured':
         return (
-          <div className={`subject-card__inner`} style={{ backgroundColor: 'var(--primary-container)' }}>
+          <div className="subject-card__inner subject-card__inner--featured">
             <div className="subject-card__top">
               <span className="tag tag-primary">MODULE {subject.module}</span>
               <span className="material-symbols-outlined" style={{ fontSize: '2rem' }}>
@@ -43,7 +43,7 @@ function SubjectCard({ subject, index }) {
 
       case 'blue':
         return (
-          <div className="subject-card__inner" style={{ backgroundColor: 'var(--tertiary)', color: 'white' }}>
+          <div className="subject-card__inner subject-card__inner--blue">
             <div className="subject-card__top">
               <span className="tag" style={{ backgroundColor: 'white', color: 'var(--tertiary)' }}>
                 MODULE {subject.module}
@@ -78,7 +78,7 @@ function SubjectCard({ subject, index }) {
 
       case 'red':
         return (
-          <div className="subject-card__inner" style={{ backgroundColor: 'var(--secondary)', color: 'white' }}>
+          <div className="subject-card__inner subject-card__inner--red">
             <div className="subject-card__top">
               <span className="tag tag-primary">MODULE {subject.module}</span>
               <span className="material-symbols-outlined" style={{ fontSize: '1.75rem' }}>
@@ -102,7 +102,7 @@ function SubjectCard({ subject, index }) {
 
       case 'neutral':
         return (
-          <div className="subject-card__inner" style={{ backgroundColor: 'var(--surface-container-high)' }}>
+          <div className="subject-card__inner subject-card__inner--neutral">
             <div className="subject-card__top">
               <span className="tag tag-primary">MODULE {subject.module}</span>
               <span className="material-symbols-outlined" style={{ fontSize: '1.75rem' }}>
@@ -131,17 +131,7 @@ function SubjectCard({ subject, index }) {
 
       case 'locked':
         return (
-          <div className="subject-card__inner" style={{
-            background: 'var(--bg)',
-            borderStyle: 'dashed',
-            opacity: 0.6,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            boxShadow: 'none',
-          }}>
+          <div className="subject-card__inner subject-card__inner--locked">
             <span className="material-symbols-outlined" style={{ fontSize: '3rem', marginBottom: '1rem' }}>
               lock
             </span>

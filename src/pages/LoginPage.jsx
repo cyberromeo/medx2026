@@ -56,16 +56,13 @@ export default function LoginPage() {
             </label>
             <div className="login-page__input-wrap">
               <input
-                className="input-field"
+                className={`input-field ${isShaking ? 'login-page__input--shaking' : ''}`}
                 id="password-input"
                 type="password"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 autoFocus
-                style={isShaking ? {
-                  animation: 'shake 0.5s ease',
-                } : {}}
               />
               <span className="material-symbols-outlined login-page__input-icon">
                 lock
@@ -76,7 +73,7 @@ export default function LoginPage() {
           {/* Error Message */}
           {error && (
             <div className="login-page__error animate-fade-in" id="login-error">
-              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+              <span className="material-symbols-outlined">
                 error
               </span>
               {error}
@@ -93,21 +90,7 @@ export default function LoginPage() {
           {/* Submit Button */}
           <button className="btn-offset" type="submit" id="login-submit">
             <div className="btn-offset__shadow"></div>
-            <div
-              className="btn-offset__face"
-              style={{
-                backgroundColor: 'var(--tertiary)',
-                color: 'white',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--primary-container)';
-                e.currentTarget.style.color = 'var(--primary)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--tertiary)';
-                e.currentTarget.style.color = 'white';
-              }}
-            >
+            <div className="btn-offset__face login-page__submit-face">
               <span>ENTER</span>
               <span className="material-symbols-outlined" style={{ fontSize: '2rem' }}>
                 arrow_forward
@@ -117,17 +100,17 @@ export default function LoginPage() {
         </form>
 
         {/* Footer */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '1rem' }}>
+        <div className="login-page__footer">
           <a href="https://wa.me/919087375875" target="_blank" rel="noopener noreferrer" className="login-page__forgot">
-            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+            <span className="material-symbols-outlined">
               help
             </span>
             Forgot Access Code?
           </a>
           <div className="login-page__footer-dots">
-            <div className="login-page__footer-dot" style={{ backgroundColor: 'var(--secondary)' }}></div>
-            <div className="login-page__footer-dot" style={{ backgroundColor: 'var(--primary-container)' }}></div>
-            <div className="login-page__footer-dot" style={{ backgroundColor: 'var(--tertiary)' }}></div>
+            <div className="login-page__footer-dot login-page__footer-dot--red"></div>
+            <div className="login-page__footer-dot login-page__footer-dot--yellow"></div>
+            <div className="login-page__footer-dot login-page__footer-dot--blue"></div>
           </div>
         </div>
       </main>
@@ -146,17 +129,6 @@ export default function LoginPage() {
       </div>
       <div className="login-page__bg-strip-right"></div>
       <div className="login-page__bg-strip-left"></div>
-
-      {/* Shake Animation */}
-      <style>{`
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          20% { transform: translateX(-10px); }
-          40% { transform: translateX(10px); }
-          60% { transform: translateX(-6px); }
-          80% { transform: translateX(6px); }
-        }
-      `}</style>
     </div>
   );
 }

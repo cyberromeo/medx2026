@@ -38,30 +38,12 @@ export default function PYTsPage() {
             return (
               <div 
                 key={subject.subjectId} 
-                style={{
-                  background: 'var(--surface-container)',
-                  border: '2px solid var(--outline)',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
-                }}
+                className={`pyt-accordion ${isExpanded ? 'pyt-accordion--expanded' : ''}`}
               >
                 {/* Subject Header (Clickable) */}
                 <button 
                   onClick={() => toggleSubject(subject.subjectId)}
-                  style={{
-                    width: '100%',
-                    padding: '1.5rem 2rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    background: isExpanded ? 'var(--primary)' : 'transparent',
-                    color: isExpanded ? 'var(--on-primary)' : 'var(--on-surface)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'all 0.3s ease'
-                  }}
+                  className="pyt-accordion__header"
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     <span 
@@ -71,10 +53,10 @@ export default function PYTsPage() {
                       {isExpanded ? 'folder_open' : 'folder'}
                     </span>
                     <div>
-                      <h2 style={{ fontFamily: 'var(--font-headline)', margin: 0, fontSize: '1.5rem', textTransform: 'uppercase' }}>
+                      <h2 style={{ margin: 0, fontSize: '1.5rem' }}>
                         {subject.subjectName}
                       </h2>
-                      <span style={{ fontSize: '0.9rem', opacity: 0.8, fontFamily: 'var(--font-body)' }}>
+                      <span style={{ fontSize: '0.9rem', opacity: 0.8, fontFamily: 'var(--font-body)', textTransform: 'none', fontWeight: 500 }}>
                         {subject.topics.length} Topics
                       </span>
                     </div>
@@ -89,24 +71,18 @@ export default function PYTsPage() {
 
                 {/* Topics List (Collapsible) */}
                 <div 
+                  className="pyt-accordion__content"
                   style={{ 
                     maxHeight: isExpanded ? '20000px' : '0', 
-                    opacity: isExpanded ? 1 : 0,
-                    overflow: 'hidden',
-                    transition: 'all 0.4s ease-in-out'
+                    opacity: isExpanded ? 1 : 0
                   }}
                 >
                   <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {subject.topics.map((topic, index) => (
-                      <div key={index} style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '1rem 1.25rem',
-                        background: topic.priority > 0 ? 'var(--secondary-container)' : 'var(--surface)',
-                        border: '1px solid var(--outline)',
-                        borderRadius: '8px',
-                      }}>
+                      <div 
+                        key={index} 
+                        className={`pyt-topic-item ${topic.priority > 0 ? 'pyt-topic-item--priority' : ''}`}
+                      >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                           <span style={{ 
                             fontFamily: 'var(--font-headline)', 

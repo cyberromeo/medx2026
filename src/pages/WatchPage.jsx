@@ -37,11 +37,11 @@ export default function WatchPage() {
     return (
       <>
         <Navbar showBack />
-        <main className="watch-page container" style={{ textAlign: 'center', paddingTop: '10rem' }}>
-          <h1 style={{ fontFamily: 'var(--font-headline)', fontSize: '3rem', marginBottom: '1rem' }}>
+        <main className="watch-page container watch-page--not-found">
+          <h1 className="watch-page__not-found-title">
             VIDEO NOT FOUND
           </h1>
-          <button className="btn btn-primary neo-shadow" onClick={() => navigate('/subjects')} style={{ marginTop: '2rem' }}>
+          <button className="btn btn-primary neo-shadow" onClick={() => navigate('/subjects')}>
             BACK TO SUBJECTS
           </button>
         </main>
@@ -55,7 +55,7 @@ export default function WatchPage() {
       <main className="watch-page container" id="watch-page">
         {/* Back link */}
         <Link to={`/subjects/${subjectId}`} className="watch-page__back animate-slide-up">
-          <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_back</span>
+          <span className="material-symbols-outlined">arrow_back</span>
           Back to {subjectData.title}
         </Link>
 
@@ -75,7 +75,7 @@ export default function WatchPage() {
             <div className="watch-page__info-bar">
               <span className="tag tag-tertiary">{video.chapter}</span>
               <span className="watch-page__duration-badge">
-                <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>schedule</span>
+                <span className="material-symbols-outlined">schedule</span>
                 {video.duration}
               </span>
             </div>
@@ -110,7 +110,7 @@ export default function WatchPage() {
           {/* Sidebar — playlist */}
           <aside className="watch-page__sidebar">
             <h3 className="watch-page__sidebar-title">
-              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>playlist_play</span>
+              <span className="material-symbols-outlined">playlist_play</span>
               PLAYLIST
             </h3>
             <div className="watch-page__playlist">
@@ -126,7 +126,7 @@ export default function WatchPage() {
                       <img src={v.thumbnail} alt={v.title} loading="lazy" />
                       {isCurrent && (
                         <div className="watch-page__playlist-now">
-                          <span className="material-symbols-outlined filled" style={{ fontSize: '20px', color: 'var(--primary-container)' }}>
+                          <span className="material-symbols-outlined filled">
                             play_arrow
                           </span>
                         </div>

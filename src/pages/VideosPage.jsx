@@ -60,17 +60,16 @@ export default function VideosPage() {
     return (
       <>
         <Navbar showBack />
-        <main className="videos-page container" style={{ textAlign: 'center', paddingTop: '10rem' }}>
-          <h1 style={{ fontFamily: 'var(--font-headline)', fontSize: '3rem', marginBottom: '1rem' }}>
+        <main className="videos-page container videos-page--not-found">
+          <h1 className="videos-page__empty-title">
             COMING SOON
           </h1>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.125rem', color: 'var(--on-surface-variant)' }}>
+          <p className="videos-page__empty-subtitle">
             This subject's video lectures are being prepared.
           </p>
           <button
             className="btn btn-primary neo-shadow"
             onClick={() => navigate('/subjects')}
-            style={{ marginTop: '2rem' }}
           >
             BACK TO SUBJECTS
           </button>
@@ -87,9 +86,9 @@ export default function VideosPage() {
         {/* Header */}
         <section className="videos-page__header animate-slide-up">
           <div className="videos-page__header-content">
-            <div>
-              <span className="tag tag-tertiary videos-page__subject-tag">LECTURE SERIES</span>
-              <h1 className="videos-page__title" style={{ marginTop: '1rem' }}>
+            <div className="videos-page__header-text">
+              <span className="tag tag-tertiary">LECTURE SERIES</span>
+              <h1 className="videos-page__title">
                 {subjectData.title}
               </h1>
             </div>
@@ -98,7 +97,7 @@ export default function VideosPage() {
                 <p className="videos-page__stat-label">MODULES</p>
                 <p className="videos-page__stat-value">{subjectData.videos?.length || 0}</p>
               </div>
-              <div className="videos-page__stat-box" style={{ backgroundColor: 'var(--primary-container)' }}>
+              <div className="videos-page__stat-box videos-page__stat-box--accent">
                 <p className="videos-page__stat-label">DURATION</p>
                 <p className="videos-page__stat-value">{`${(subjectData.videos?.length || 0) * 2}H`}</p>
               </div>
