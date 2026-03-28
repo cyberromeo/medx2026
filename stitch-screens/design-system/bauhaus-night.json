@@ -1,0 +1,43 @@
+{
+  "name": "assets/5d0280ce81a24bfd99415dce308bbd51",
+  "displayName": "Bauhaus Night",
+  "theme": {
+    "colorMode": "DARK",
+    "font": "SPACE_GROTESK",
+    "customColor": "#E63946",
+    "headlineFont": "SPACE_GROTESK",
+    "bodyFont": "SPACE_GROTESK",
+    "labelFont": "SPACE_GROTESK",
+    "namedColors": {
+      "background": "#131313",
+      "primary": "#ffb3ad",
+      "primary_container": "#ff544e",
+      "secondary": "#9ecaff",
+      "secondary_container": "#1e95f2",
+      "tertiary": "#e9c400",
+      "tertiary_container": "#c9a900",
+      "surface": "#131313",
+      "surface_bright": "#393939",
+      "surface_container": "#201f1f",
+      "surface_container_high": "#2a2a2a",
+      "surface_container_highest": "#353534",
+      "surface_container_low": "#1c1b1b",
+      "surface_container_lowest": "#0e0e0e",
+      "on_background": "#e5e2e1",
+      "on_primary": "#680008",
+      "on_surface": "#e5e2e1",
+      "on_surface_variant": "#e4bebc",
+      "outline": "#ab8987",
+      "outline_variant": "#5b403f",
+      "error": "#ffb4ab",
+      "on_error": "#690005"
+    },
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#FF3E3E",
+    "overrideSecondaryColor": "#2196F3",
+    "overrideTertiaryColor": "#FFD700",
+    "overrideNeutralColor": "#121212",
+    "spacingScale": 3
+  },
+  "designMd": "# Design System Specification: Bauhaus Neo-Dark\n\n## 1. Overview & Creative North Star: \"The Kinetic Gallery\"\nThe Creative North Star for this design system is \"The Kinetic Gallery.\" This is a high-end, editorial approach to Neo-Brutalism that moves away from the \"cheap\" aesthetics of the early web and into the realm of luxury digital curation.\n\nWhile traditional Neo-Brutalism is often loud and flat, this system introduces tonal depth and motion-driven hierarchy. We use the rigid, mathematical soul of Bauhaus—geometric purity and primary colors—but submerge it in a deep, charcoal void.\n\n## 2. Colors: The Primary Void\n- Base Surfaces: surface (#131313) for the main canvas; surface_container_lowest (#0e0e0e) for deep \"inset\" zones.\n- Primary (Red): primary (#ffb3ad) — Use for critical calls to action.\n- Secondary (Blue): secondary (#9ecaff) — Use for supportive interactive elements.\n- Tertiary (Yellow): tertiary (#e9c400) — Use for alerts, highlights, and \"pop\" geometry.\n\n## 3. Typography: Structural Boldness\nSpace Grotesk exclusively. Display: 3.5rem / 2.75rem. Always Uppercase. Letter spacing: -0.02em.\n\n## 4. Elevation & Depth: Tonal Layering\nStack surfaces to create importance. Ghost Shadows with on_surface at 4% opacity, blur: 40px, offset y: 20px.\n\n## 5. Components: Geometric Modernism\n- Buttons: Sharp 0px corners. Primary: primary_container bg. Hover: scale 1.05x.\n- Cards: surface_container_low. Hover: float up -8px.\n- Input Fields: surface_container_lowest bg. 2px Focus Bar in tertiary (Yellow).\n\n## 6. Motion & Interaction\n- Entrance: Slide-In from bottom, 20px offset, fade-in, staggered 0.05s.\n- Hover: scale 1.02.\n- Floating: Infinite alternate animation ±10px on Y-axis."
+}

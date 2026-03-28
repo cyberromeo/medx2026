@@ -1,0 +1,42 @@
+{
+  "name": "assets/5653677539244704477",
+  "displayName": "Bauhaus",
+  "theme": {
+    "colorMode": "LIGHT",
+    "font": "SPACE_GROTESK",
+    "roundness": "ROUND_FOUR",
+    "preset": "custom",
+    "customColor": "#1a1a1a",
+    "saturation": 1,
+    "headlineFont": "SPACE_GROTESK",
+    "bodyFont": "INTER",
+    "labelFont": "SPACE_GROTESK",
+    "namedColors": {
+      "background": "#f5f0e8",
+      "primary": "#1a1a1a",
+      "primary_container": "#ffcc00",
+      "secondary": "#e63b2e",
+      "secondary_container": "#ffdad6",
+      "tertiary": "#0055ff",
+      "tertiary_container": "#d6e3ff",
+      "surface": "#f5f0e8",
+      "surface_container": "#eee9e0",
+      "surface_container_high": "#e8e3da",
+      "surface_container_highest": "#e2ddd4",
+      "on_background": "#1a1a1a",
+      "on_primary": "#ffffff",
+      "on_surface": "#1a1a1a",
+      "on_surface_variant": "#4a4a4a",
+      "outline": "#1a1a1a",
+      "outline_variant": "#d0cbc3",
+      "error": "#cc0000",
+      "on_error": "#ffffff"
+    },
+    "colorVariant": "NEUTRAL",
+    "overridePrimaryColor": "#1a1a1a",
+    "overrideSecondaryColor": "#e63b2e",
+    "overrideTertiaryColor": "#0055ff",
+    "overrideNeutralColor": "#4a4a4a"
+  },
+  "designMd": "# Bauhaus — Neo-Brutalist\n\n## North Star: \"Form Follows Function\"\nBold, raw, and unapologetic. Inspired by Bauhaus and brutalist architecture. High contrast, strong geometry, deliberate imperfection.\n\n## Colors\n- **Primary (`#1a1a1a`):** Near-black for text and primary elements.\n- **Accent Yellow (`#ffcc00`):** High-energy highlight for CTAs and active states.\n- **Accent Red (`#e63b2e`):** Destructive actions, alerts, and bold emphasis.\n- **Accent Blue (`#0055ff`):** Links and interactive elements.\n- **Background (`#f5f0e8`):** Warm off-white, like aged paper.\n- Use flat, solid color blocks. No gradients on surfaces.\n\n## Typography\n- **Headlines:** Space Grotesk — geometric, bold, oversized. Use display sizes aggressively (3x+ body size).\n- **Body:** Inter — functional and readable.\n- Scale contrast is key: headlines should feel massive relative to body text.\n\n## Elevation\n- No drop shadows. Use **thick solid borders** (2-3px, `#1a1a1a`) instead.\n- Depth via **offset shadows**: solid-color block offsets (4-6px down-right in `#1a1a1a`).\n\n## Components\n- **Buttons:** Solid fill, thick border, uppercase text. Hover = color invert.\n- **Cards:** Thick black borders, no border-radius or minimal. Content-dense.\n- **Inputs:** Thick bottom border only. No rounded corners.\n\n## Rules\n- Never use soft shadows or glassmorphism. Keep it raw and graphic.\n- Embrace asymmetric layouts and oversized type.\n- Limited palette: black + one accent per section."
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#1a1a1a",
+              "on-primary-fixed": "#1a1a1a",
+              "outline-variant": "#d0cbc3",
+              "tertiary-fixed-dim": "#a8c6ff",
+              "secondary-fixed": "#ffdad6",
+              "primary-container": "#ffcc00",
+              "outline": "#1a1a1a",
+              "on-secondary": "#1a1a1a",
+              "on-tertiary-fixed": "#1a1a1a",
+              "on-secondary-fixed-variant": "#1a1a1a",
+              "surface-tint": "#1a1a1a",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1a1a",
+              "inverse-primary": "#f5f0e8",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#1a1a1a",
+              "error": "#cc0000",
+              "background": "#f5f0e8",
+              "surface-variant": "#e8e3da",
+              "on-secondary-container": "#1a1a1a",
+              "tertiary-container": "#d6e3ff",
+              "primary-fixed": "#ffcc00",
+              "on-tertiary-fixed-variant": "#1a1a1a",
+              "surface-container-high": "#e8e3da",
+              "surface": "#f5f0e8",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e2ddd4",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f5f0e8",
+              "surface-dim": "#d6d1c9",
+              "secondary-fixed-dim": "#ffb3ab",
+              "on-error-container": "#93000a",
+              "primary": "#1a1a1a",
+              "on-surface-variant": "#4a4a4a",
+              "error-container": "#ffdad6",
+              "secondary-container": "#ffdad6",
+              "tertiary-fixed": "#d6e3ff",
+              "primary-fixed-dim": "#e6b800",
+              "surface-bright": "#faf7f2",
+              "surface-container": "#eee9e0",
+              "surface-container-low": "#f2ede5",
+              "on-background": "#1a1a1a",
+              "secondary": "#e63b2e",
+              "on-secondary-fixed": "#1a1a1a",
+              "on-primary-container": "#1a1a1a",
+              "tertiary": "#0055ff",
+              "on-primary-fixed-variant": "#1a1a1a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .bauhaus-label { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f5f0e8] dark:bg-stone-900 border-b-4 border-[#1a1a1a] dark:border-white shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
+<div class="flex items-center gap-4">
+<button class="p-1 hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined text-[#1a1a1a] dark:text-stone-100" data-icon="menu">menu</span>
+</button>
+<span class="text-2xl font-black text-[#1a1a1a] dark:text-white tracking-widest font-['Space_Grotesk'] uppercase">ACADEMY</span>
+</div>
+<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] font-bold uppercase tracking-tighter">
+<a class="text-[#ffcc00] underline decoration-4 transition-colors duration-100" href="#">SUBJECTS</a>
+<a class="text-[#1a1a1a] dark:text-stone-300 hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 p-1" href="#">GALLERY</a>
+<a class="text-[#1a1a1a] dark:text-stone-300 hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 p-1" href="#">PROFILE</a>
+</div>
+<button class="p-1 hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined text-[#1a1a1a] dark:text-stone-100" data-icon="account_circle">account_circle</span>
+</button>
+</nav>
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12 border-l-8 border-primary pl-6">
+<h1 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter leading-[0.9] text-primary">
+                CHOOSE<br/>DOMAIN
+            </h1>
+<p class="mt-4 font-body text-xl font-medium max-w-xl text-on-surface-variant">
+                Master the foundations of clinical excellence through our geometric curriculum.
+            </p>
+</header>
+<!-- Bento Grid Subjects -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Feature: PATHOLOGY -->
+<div class="md:col-span-8 group cursor-pointer active:translate-x-1 active:translate-y-1 transition-transform">
+<div class="bg-primary-container border-4 border-outline p-8 h-full flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] min-h-[400px]">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary text-background px-4 py-1 text-sm font-black font-headline tracking-widest uppercase">MODULE 04</span>
+<span class="material-symbols-outlined text-4xl" data-icon="microscope">magnification_small</span>
+</div>
+<h2 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter text-primary break-all">
+                            PATHOLOGY
+                        </h2>
+</div>
+<div class="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-md">
+<p class="font-body text-lg font-bold leading-tight mb-4">Study of the causes and effects of disease or injury.</p>
+<div class="flex gap-4">
+<div class="flex items-center gap-1 font-headline font-bold text-sm bg-background border-2 border-primary px-3 py-1">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+                                    24 UNITS
+                                </div>
+<div class="flex items-center gap-1 font-headline font-bold text-sm bg-background border-2 border-primary px-3 py-1">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+                                    48H
+                                </div>
+</div>
+</div>
+<button class="bg-primary text-background hover:bg-tertiary px-8 py-4 font-black font-headline text-xl uppercase border-2 border-primary transition-colors flex items-center gap-2">
+                            START <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary: ANATOMY -->
+<div class="md:col-span-4 group cursor-pointer active:translate-x-1 active:translate-y-1 transition-transform">
+<div class="bg-tertiary border-4 border-outline p-6 h-full flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] text-white">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-white text-tertiary px-3 py-1 text-xs font-black font-headline tracking-widest uppercase">MODULE 01</span>
+<span class="material-symbols-outlined text-3xl" data-icon="body_system">body_system</span>
+</div>
+<h3 class="text-4xl font-black font-headline uppercase tracking-tighter leading-none mb-4">
+                            ANATOMY
+                        </h3>
+</div>
+<div class="bg-white text-tertiary p-4 border-2 border-primary">
+<p class="font-body text-sm font-bold leading-tight uppercase">Structural foundation of medical knowledge.</p>
+</div>
+</div>
+</div>
+<!-- Tertiary Row -->
+<div class="md:col-span-4 group cursor-pointer active:translate-x-1 active:translate-y-1 transition-transform">
+<div class="bg-secondary border-4 border-outline p-6 h-full flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] text-white">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary text-white px-3 py-1 text-xs font-black font-headline tracking-widest uppercase">MODULE 02</span>
+<span class="material-symbols-outlined text-3xl" data-icon="vital_signs">vital_signs</span>
+</div>
+<h3 class="text-4xl font-black font-headline uppercase tracking-tighter leading-none">
+                            PHYSIOLOGY
+                        </h3>
+</div>
+<div class="mt-6">
+<span class="font-headline font-black text-6xl opacity-20">02</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group cursor-pointer active:translate-x-1 active:translate-y-1 transition-transform">
+<div class="bg-surface-variant border-4 border-outline p-6 h-full flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary text-white px-3 py-1 text-xs font-black font-headline tracking-widest uppercase">MODULE 03</span>
+<span class="material-symbols-outlined text-3xl" data-icon="pill">pill</span>
+</div>
+<h3 class="text-4xl font-black font-headline uppercase tracking-tighter leading-none">
+                            PHARMACO-LOGY
+                        </h3>
+</div>
+<div class="mt-6 border-t-4 border-primary pt-4">
+<p class="font-body text-sm font-bold uppercase">Drug action &amp; therapeutic use.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4">
+<div class="bg-background border-4 border-dashed border-outline p-6 h-full flex flex-col items-center justify-center text-center opacity-60">
+<span class="material-symbols-outlined text-5xl mb-4" data-icon="lock">lock</span>
+<h3 class="text-xl font-black font-headline uppercase">MORE SUBJECTS</h3>
+<p class="font-body text-xs font-bold uppercase mt-2">Complete current modules to unlock</p>
+</div>
+</div>
+</div>
+<!-- Featured Lab Image Section -->
+<section class="mt-16 mb-24 grid grid-cols-1 md:grid-cols-2 gap-0 border-4 border-outline bg-primary shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] overflow-hidden">
+<div class="h-64 md:h-auto overflow-hidden">
+<img alt="Laboratory environment" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="high-contrast black and white photograph of a modern medical laboratory with glass equipment, geometric shadows, and bright clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi5_FIpIaQLsCK37WvKlnB1e4JAqHBrnNp48nMr75UDqzQGRMVo5AOXb7VytdlnnbtFEjXBHhYoQfQokcELv_4rDuId-I0lAhNhHHIrBooGmMG-FrxqvaVE9_mKpxjEDORUnitSx67eyh7IgBy5drCkPdK7dAXX7zgF5QV2dvj3JRYKcXQK6tHhXV52QMNKDfSw-ijoym_7ayF_-RL8i1EF4uzVx9OFiX3njSWwzDj6HQS6QDOJFaKyelW1cZ5rcNTzeZ64amdz3c"/>
+</div>
+<div class="p-10 flex flex-col justify-center bg-[#f5f0e8]">
+<h4 class="text-4xl font-black font-headline uppercase tracking-tighter text-primary mb-4 leading-none">
+                    VIRTUAL<br/>LABORATORY
+                </h4>
+<p class="font-body font-medium text-lg mb-8">Access interactive 3D simulations of cellular environments and systemic pathology.</p>
+<button class="w-full py-4 border-4 border-primary bg-primary text-white font-black font-headline uppercase text-xl hover:bg-tertiary transition-colors">
+                    ENTER SIMULATION
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-stretch bg-[#f5f0e8] dark:bg-stone-900 border-t-4 border-[#1a1a1a] dark:border-white">
+<!-- SUBJECTS - ACTIVE -->
+<a class="flex flex-col items-center justify-center bg-[#ffcc00] text-[#1a1a1a] h-full w-full border-x-2 border-[#1a1a1a] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">SUBJECTS</span>
+</a>
+<!-- GALLERY -->
+<a class="flex flex-col items-center justify-center text-[#1a1a1a] dark:text-stone-400 h-full w-full hover:bg-[#0055ff] hover:text-white active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">GALLERY</span>
+</a>
+<!-- PROFILE -->
+<a class="flex flex-col items-center justify-center text-[#1a1a1a] dark:text-stone-400 h-full w-full hover:bg-[#0055ff] hover:text-white active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">PROFILE</span>
+</a>
+</nav>
+</body></html>

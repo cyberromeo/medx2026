@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#1a1a1a",
+              "on-primary-fixed": "#1a1a1a",
+              "outline-variant": "#d0cbc3",
+              "tertiary-fixed-dim": "#a8c6ff",
+              "secondary-fixed": "#ffdad6",
+              "primary-container": "#ffcc00",
+              "outline": "#1a1a1a",
+              "on-secondary": "#1a1a1a",
+              "on-tertiary-fixed": "#1a1a1a",
+              "on-secondary-fixed-variant": "#1a1a1a",
+              "surface-tint": "#1a1a1a",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1a1a",
+              "inverse-primary": "#f5f0e8",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#1a1a1a",
+              "error": "#cc0000",
+              "background": "#f5f0e8",
+              "surface-variant": "#e8e3da",
+              "on-secondary-container": "#1a1a1a",
+              "tertiary-container": "#d6e3ff",
+              "primary-fixed": "#ffcc00",
+              "on-tertiary-fixed-variant": "#1a1a1a",
+              "surface-container-high": "#e8e3da",
+              "surface": "#f5f0e8",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e2ddd4",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f5f0e8",
+              "surface-dim": "#d6d1c9",
+              "secondary-fixed-dim": "#ffb3ab",
+              "on-error-container": "#93000a",
+              "primary": "#1a1a1a",
+              "on-surface-variant": "#4a4a4a",
+              "error-container": "#ffdad6",
+              "secondary-container": "#ffdad6",
+              "tertiary-fixed": "#d6e3ff",
+              "primary-fixed-dim": "#e6b800",
+              "surface-bright": "#faf7f2",
+              "surface-container": "#eee9e0",
+              "surface-container-low": "#f2ede5",
+              "on-background": "#1a1a1a",
+              "secondary": "#e63b2e",
+              "on-secondary-fixed": "#1a1a1a",
+              "on-primary-container": "#1a1a1a",
+              "tertiary": "#0055ff",
+              "on-primary-fixed-variant": "#1a1a1a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(26, 26, 26, 1);
+        }
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-primary min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f5f0e8] dark:bg-stone-900 border-b-4 border-[#1a1a1a] dark:border-white shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 active:translate-x-1 active:translate-y-1 active:shadow-none p-1">
+<span class="material-symbols-outlined text-[#1a1a1a] dark:text-stone-100" style="font-size: 28px;">arrow_back</span>
+</button>
+<h1 class="font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-2xl text-[#1a1a1a] dark:text-white tracking-widest">ACADEMY</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#ffcc00] hover:text-[#1a1a1a] transition-colors duration-100 active:translate-x-1 active:translate-y-1 active:shadow-none p-1">
+<span class="material-symbols-outlined text-[#1a1a1a] dark:text-stone-100">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<!-- Subject Header Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-4 border-primary pb-8">
+<div>
+<span class="bg-tertiary text-white font-headline font-black px-3 py-1 text-sm uppercase mb-4 inline-block">LECTURE SERIES</span>
+<h2 class="font-headline font-black text-6xl md:text-8xl leading-none uppercase tracking-tighter">PATHOLOGY</h2>
+</div>
+<div class="flex gap-4">
+<div class="border-2 border-primary p-4 bg-white neo-shadow-sm hidden md:block w-48">
+<p class="font-headline font-bold text-xs uppercase mb-1">MODULES</p>
+<p class="font-headline font-black text-3xl">12</p>
+</div>
+<div class="border-2 border-primary p-4 bg-primary-container neo-shadow-sm hidden md:block w-48">
+<p class="font-headline font-bold text-xs uppercase mb-1">DURATION</p>
+<p class="font-headline font-black text-3xl">24H</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Video Card 1 -->
+<article class="bg-white border-4 border-primary neo-shadow flex flex-col group">
+<div class="relative aspect-video border-b-4 border-primary overflow-hidden">
+<img alt="Microscopic view" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Abstract microscopic view of cellular structures with high contrast dramatic lighting in Bauhaus color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArX5uun13lGMgq7qHxI9BIawYYr83n39nmusTHt_KBeRhjdQ5xVQTwtdInbPRxHVIPMipW0nGTtqMpFmd811sZydPSzNHbLxKm2lTbBQBRnn41DxFBpJWZ7I3tfozwFNtkS2IUYcE1lyn8iKOzsHPLvfnUkn-dz56l0whK6j8t3gT764BfXQvMFG_ySxWCbo1Ptm-gNz8rE-STZa2kgsuyuIsraTgqNVT_uhWl5vdUyJxG0Q7mizXKZsR18nAYnb9xPbqVMi7Ipdw"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white font-headline font-bold px-2 py-1 text-sm">14:20</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-tertiary font-headline font-bold text-xs uppercase mb-2">CHAPTER 01</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">CELLULAR ADAPTATIONS &amp; REVERSIBLE INJURY</h3>
+</div>
+<button class="w-full border-4 border-primary bg-primary-container font-headline font-black py-4 uppercase tracking-widest hover:bg-primary hover:text-white transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+<!-- Video Card 2 -->
+<article class="bg-white border-4 border-primary neo-shadow flex flex-col group">
+<div class="relative aspect-video border-b-4 border-primary overflow-hidden">
+<img alt="DNA illustration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Bold geometric illustration of DNA double helix in primary colors red blue and yellow with heavy black lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEvJFRYgAnAq9YqATzS5G_wVKoZbwhOLkneUeFEEuy2QMZX6RCWLYZ6x06UDVCg5VYzGIxFx0SV_N88eip0N9EhXAbi2dFsPiWmae3X0yZsd_e3kdcDbJREzhAc6DKlB69oSC3ypZBjFvoAPBbSGBQwCMebTAjikxWZ0eZVLSkoKaJNJH51lwjPMacb5-tsYf3txjMZtVrOtuakuFYbW9xgbAANv4S57i7hRr1SGBhXHcYFXaa4HdYZfLjmVmVz44hzw7OgTZyamM"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white font-headline font-bold px-2 py-1 text-sm">22:05</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-secondary font-headline font-bold text-xs uppercase mb-2">CHAPTER 02</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">NECROSIS VS. APOPTOSIS: THE FINAL STAGES</h3>
+</div>
+<button class="w-full border-4 border-primary bg-white font-headline font-black py-4 uppercase tracking-widest hover:bg-secondary hover:text-white transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+<!-- Video Card 3 (Hero Layout Variant) -->
+<article class="bg-primary text-white border-4 border-primary neo-shadow flex flex-col group md:col-span-2 lg:col-span-1">
+<div class="relative aspect-video border-b-4 border-white overflow-hidden">
+<img alt="Medical laboratory" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300" data-alt="Modern medical laboratory equipment with neon red and blue lighting high contrast brutalist architectural aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC336K3gPTPDSr6EngbbiJOHVcFKCXcdKgX4WzM_vGqC37tcQr_-_lMrs63h3uZnDErbXNyElBMSEyOCPDo5XNpfL74nY-707F6zFZoPbqnIJCPLV7pUXke_AdodPpUY_LDbf7igPDFOuxxhQeuCuVNV20EIpbzZ-e00MFPfpgHJOOyyGhd02YiKOBQpwT_gCp6mcJgs5ZE636PH1osmMNfp13VOybsKLJpiCuQPgVK6__ggr5PRcczyqYU5GUgDZudCLZFVLNmDL4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-8xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-white text-primary font-headline font-bold px-2 py-1 text-sm">45:12</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-primary-container font-headline font-bold text-xs uppercase mb-2">CHAPTER 03</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">INFLAMMATION: ACUTE PHASE RESPONSES</h3>
+</div>
+<button class="w-full border-4 border-white bg-transparent font-headline font-black py-4 uppercase tracking-widest hover:bg-white hover:text-primary transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+<!-- Video Card 4 -->
+<article class="bg-white border-4 border-primary neo-shadow flex flex-col group">
+<div class="relative aspect-video border-b-4 border-primary overflow-hidden">
+<img alt="Lab results" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Close up of medical results and vials with high contrast black shadows and punchy primary color highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoYj3l69pbcY9GCYsf6Frx6egYaeHmQ6dnD7rFYFxEURXuRYLaOFDjVitMqqywKNTOtAv9clcWpSRLA-e66e-E4djkw808DH4pEIqxFswld2idwhZYELM7Ks_y86gSHgfDI_D579sE85LPNGdn21LIhsYO9WQ3Nel-5XsHqXA8A7OWTQ16CZBKNY0xfhbaSdjEokirvqLJaa04dPMqZGrOoYpjnny0kTgq5bGAh84EYq-BvV-dT7HcLNN1oU9jduXbP-r9Vo6Z-Nw"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white font-headline font-bold px-2 py-1 text-sm">18:45</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-tertiary font-headline font-bold text-xs uppercase mb-2">CHAPTER 04</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">TISSUE REPAIR &amp; REGENERATION PATHWAYS</h3>
+</div>
+<button class="w-full border-4 border-primary bg-primary-container font-headline font-black py-4 uppercase tracking-widest hover:bg-primary hover:text-white transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+<!-- Video Card 5 -->
+<article class="bg-white border-4 border-primary neo-shadow flex flex-col group">
+<div class="relative aspect-video border-b-4 border-primary overflow-hidden">
+<img alt="Heart diagram" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Graphic anatomical heart diagram in minimalist Bauhaus style using only red black and white thick lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMLi1FXZnoK5sDH0Wsycbme3F9NLI8Q18xie2qimmMPIkcERJ39dPWonMCFtkPbAtLhHtNMb2M8R2olhkca8JGobHBh_VREH0TVcz8ELni9Vupkbtl1olDRyQRUqzIhdM3PtKlj_e87Ru18Pr8dFfuLFxB2XtW6LCQl89xZbSBMNDt58hR9JePB-bvUmKB-75VIipdqm6ydejGg0yHjKrtYXHIQwQ7XRx1HVLbyJoI_06tEzp0IPzeqio18EZiovoa9vQXmB5Ucz4"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white font-headline font-bold px-2 py-1 text-sm">31:20</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-secondary font-headline font-bold text-xs uppercase mb-2">CHAPTER 05</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">HEMODYNAMIC DISORDERS &amp; THROMBOSIS</h3>
+</div>
+<button class="w-full border-4 border-primary bg-white font-headline font-black py-4 uppercase tracking-widest hover:bg-secondary hover:text-white transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+<!-- Video Card 6 -->
+<article class="bg-[#e2ddd4] border-4 border-primary neo-shadow flex flex-col group">
+<div class="relative aspect-video border-b-4 border-primary overflow-hidden">
+<img alt="Medicine" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Rows of pharmaceutical samples in a grid layout high contrast top down view with deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi85ZdaObQ5yAoo4zF1ML77laMQHEPWYfV32zweYtsYfZz4byiv_JuQkTbO2RtoJAa2TXj8YYyfsVGiHHGY-ly1koiCNTqnWh0-k_fPGvPV6ndl3UDgut591MgBNLo16w-Q6DLs34rWw7yLX-0VJeLRepU8f8-FbCXB6_ehDoB6MbWprwsvDFj2tJgywAkPKOmiB8CdNLZy0ns6HGOca5fGIeNt0HNmTr-T9ukBTL86H87ZMIyrZqBz2XjERLpLuYW7xiYMBgxr1k"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white font-headline font-bold px-2 py-1 text-sm">27:50</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="text-primary font-headline font-bold text-xs uppercase mb-2">CHAPTER 06</p>
+<h3 class="font-headline font-black text-2xl leading-tight uppercase mb-4">NEOPLASIA: BIOLOGY OF TUMOR GROWTH</h3>
+</div>
+<button class="w-full border-4 border-primary bg-primary font-headline font-black py-4 text-white uppercase tracking-widest hover:bg-primary-container hover:text-primary transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+                        WATCH
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-stretch bg-[#f5f0e8] dark:bg-stone-900 border-t-4 border-[#1a1a1a] dark:border-white">
+<!-- Subjects (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#1a1a1a] dark:text-stone-400 h-full w-full hover:bg-[#0055ff] hover:text-white transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">SUBJECTS</span>
+</a>
+<!-- Gallery (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#ffcc00] text-[#1a1a1a] h-full w-full border-x-2 border-[#1a1a1a] transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">GALLERY</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#1a1a1a] dark:text-stone-400 h-full w-full hover:bg-[#0055ff] hover:text-white transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">PROFILE</span>
+</a>
+</nav>
+</body></html>
