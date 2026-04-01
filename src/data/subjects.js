@@ -116,7 +116,7 @@ export const videosBySubject = {
     videos: [
       {
         id: 'physio-01',
-        chapter: 'CLASS 1',
+        chapter: 'CLASS 1 — 28 MAR',
         title: 'Physiology — Class 1',
         duration: 'LIVE',
         chapterColor: 'tertiary',
@@ -126,7 +126,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-02',
-        chapter: 'CLASS 2',
+        chapter: 'CLASS 2 — 28 MAR',
         title: 'Physiology — Class 2',
         duration: 'LIVE',
         chapterColor: 'secondary',
@@ -136,7 +136,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-03',
-        chapter: 'CLASS 3',
+        chapter: 'CLASS 3 — 28 MAR',
         title: 'Physiology — Class 3',
         duration: 'LIVE',
         chapterColor: 'primary-container',
@@ -146,7 +146,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-04',
-        chapter: 'CLASS 4',
+        chapter: 'CLASS 4 — 29 MAR',
         title: 'Physiology — Class 4',
         duration: 'LIVE',
         chapterColor: 'tertiary',
@@ -156,7 +156,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-05',
-        chapter: 'CLASS 5',
+        chapter: 'CLASS 5 — 29 MAR',
         title: 'Physiology — Class 5',
         duration: 'LIVE',
         chapterColor: 'secondary',
@@ -166,7 +166,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-06',
-        chapter: 'CLASS 6',
+        chapter: 'CLASS 6 — 29 MAR',
         title: 'Physiology — Class 6',
         duration: 'LIVE',
         chapterColor: 'primary',
@@ -176,7 +176,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-07',
-        chapter: 'CLASS 7',
+        chapter: 'CLASS 7 — 30 MAR',
         title: 'Physiology — Class 7',
         duration: 'LIVE',
         chapterColor: 'tertiary',
@@ -193,7 +193,7 @@ export const videosBySubject = {
     videos: [
       {
         id: 'anes-01',
-        chapter: 'CLASS 1',
+        chapter: 'CLASS 1 — 31 MAR',
         title: 'Anesthesia — Class 1',
         duration: 'LIVE',
         chapterColor: 'tertiary',
@@ -203,7 +203,7 @@ export const videosBySubject = {
       },
       {
         id: 'anes-02',
-        chapter: 'CLASS 2',
+        chapter: 'CLASS 2 — 31 MAR',
         title: 'Anesthesia — Class 2',
         duration: 'LIVE',
         chapterColor: 'secondary',
