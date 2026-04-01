@@ -4,7 +4,7 @@ export const subjects = [
   {
     id: 'physiology',
     name: 'Physiology',
-    module: '05',
+    module: '02',
     description: 'Study of the normal functions of living organisms and their parts.',
     units: 14,
     hours: '28H',
