@@ -8,7 +8,7 @@ export const subjects = [
     description: 'Study of the normal functions of living organisms and their parts.',
     units: 14,
     hours: '28H',
-    variant: 'red',
+    variant: 'featured',
     icon: 'favorite',
   },
   {
