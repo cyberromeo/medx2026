@@ -186,7 +186,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-08',
-        chapter: 'CLASS 8 — 30 MAR',
+        chapter: 'CLASS 8 — 2 APR',
         title: 'Physiology — Class 8',
         duration: 'LIVE',
         chapterColor: 'secondary',
@@ -196,7 +196,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-09',
-        chapter: 'CLASS 9 — 31 MAR',
+        chapter: 'CLASS 9 — 2 APR',
         title: 'Physiology — Class 9',
         duration: 'LIVE',
         chapterColor: 'primary-container',
@@ -206,7 +206,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-10',
-        chapter: 'CLASS 10 — 31 MAR',
+        chapter: 'CLASS 10 — 3 APR',
         title: 'Physiology — Class 10',
         duration: 'LIVE',
         chapterColor: 'tertiary',
@@ -216,7 +216,7 @@ export const videosBySubject = {
       },
       {
         id: 'physio-11',
-        chapter: 'CLASS 11 — 1 APR',
+        chapter: 'CLASS 11 — 3 APR',
         title: 'Physiology — Class 11',
         duration: 'LIVE',
         chapterColor: 'secondary',
