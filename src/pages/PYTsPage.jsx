@@ -25,7 +25,7 @@ export default function PYTsPage() {
             PAST YEAR<br />TOPICS
           </h1>
           <p style={{ marginTop: '1rem', color: 'var(--on-surface-variant)', maxWidth: '600px' }}>
-            A comprehensive collection of highly-tested topics from previous years. Topics marked with 
+            A comprehensive collection of highly-tested topics from previous years. Topics marked with
             <span className="material-symbols-outlined" style={{ color: '#FF5722', fontSize: '1rem', verticalAlign: 'middle', margin: '0 4px' }}>local_fire_department</span>
             have a history of frequent repetition.
           </p>
@@ -36,18 +36,18 @@ export default function PYTsPage() {
             const isExpanded = expandedSubject === subject.subjectId;
 
             return (
-              <div 
-                key={subject.subjectId} 
+              <div
+                key={subject.subjectId}
                 className={`pyt-accordion ${isExpanded ? 'pyt-accordion--expanded' : ''}`}
               >
                 {/* Subject Header (Clickable) */}
-                <button 
+                <button
                   onClick={() => toggleSubject(subject.subjectId)}
                   className="pyt-accordion__header"
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <span 
-                      className="material-symbols-outlined" 
+                    <span
+                      className="material-symbols-outlined"
                       style={{ fontSize: '2rem' }}
                     >
                       {isExpanded ? 'folder_open' : 'folder'}
@@ -61,55 +61,55 @@ export default function PYTsPage() {
                       </span>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined" style={{ 
+                  <span className="material-symbols-outlined" style={{
                     transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.3s ease' 
+                    transition: 'transform 0.3s ease'
                   }}>
                     expand_more
                   </span>
                 </button>
 
                 {/* Topics List (Collapsible) */}
-                <div 
+                <div
                   className="pyt-accordion__content"
-                  style={{ 
-                    maxHeight: isExpanded ? '20000px' : '0', 
+                  style={{
+                    maxHeight: isExpanded ? '20000px' : '0',
                     opacity: isExpanded ? 1 : 0
                   }}
                 >
                   <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {subject.topics.map((topic, index) => (
-                      <div 
-                        key={index} 
+                      <div
+                        key={index}
                         className={`pyt-topic-item ${topic.priority > 0 ? 'pyt-topic-item--priority' : ''}`}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                          <span style={{ 
-                            fontFamily: 'var(--font-headline)', 
+                          <span style={{
+                            fontFamily: 'var(--font-headline)',
                             color: 'var(--on-surface-variant)',
                             opacity: 0.5,
                             width: '30px'
                           }}>
                             {(index + 1).toString().padStart(2, '0')}
                           </span>
-                          <h4 style={{ 
-                            margin: 0, 
-                            fontSize: '1.05rem', 
+                          <h4 style={{
+                            margin: 0,
+                            fontSize: '1.05rem',
                             fontFamily: 'var(--font-body)',
                             fontWeight: topic.priority > 0 ? 600 : 400
                           }}>
                             {topic.title}
                           </h4>
                         </div>
-                        
+
                         {topic.priority > 0 && (
                           <div style={{ display: 'flex', gap: '2px' }}>
                             {Array.from({ length: topic.priority }).map((_, i) => (
-                              <span 
-                                key={i} 
-                                className="material-symbols-outlined" 
-                                style={{ 
-                                  color: '#FF5722', 
+                              <span
+                                key={i}
+                                className="material-symbols-outlined"
+                                style={{
+                                  color: '#FF5722',
                                   fontSize: '1.25rem',
                                   filter: 'drop-shadow(0px 1px 2px rgba(255, 87, 34, 0.4))'
                                 }}

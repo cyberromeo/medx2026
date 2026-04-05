@@ -31,7 +31,7 @@ export default function WatchPage() {
           return;
         }
       }
-    } catch (_) {}
+    } catch (_) { }
     setInitialTime(0);
   }, [video]);
 
