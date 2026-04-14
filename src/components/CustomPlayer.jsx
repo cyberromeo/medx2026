@@ -511,9 +511,10 @@ const CustomPlayer = ({
             />
           </div>
           <div className="medx-player__controls-row">
+            {/* Left: play + seek + time */}
             <div className="medx-player__controls-left">
               <button className="medx-player__ctrl-btn" onClick={togglePlay}>
-                <span className="material-symbols-outlined filled" style={{ fontSize: '24px' }}>
+                <span className="material-symbols-outlined filled" style={{ fontSize: '22px' }}>
                   {status === 'playing' ? 'pause' : 'play_arrow'}
                 </span>
               </button>
@@ -527,22 +528,21 @@ const CustomPlayer = ({
                 {fmt(currentTime)} / {fmt(duration)}
               </span>
             </div>
+            {/* Right: mute + volume + speed + fullscreen + branding */}
             <div className="medx-player__controls-right">
-              <div className="medx-player__volume-group">
-                <button className="medx-player__ctrl-btn" onClick={toggleMute}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
-                    {isMuted || volume === 0 ? 'volume_off' : 'volume_up'}
-                  </span>
-                </button>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={volume}
-                  onChange={handleVolume}
-                  className="medx-player__volume-slider"
-                />
-              </div>
+              <button className="medx-player__ctrl-btn" onClick={toggleMute}>
+                <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
+                  {isMuted || volume === 0 ? 'volume_off' : 'volume_up'}
+                </span>
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={volume}
+                onChange={handleVolume}
+                className="medx-player__volume-slider"
+              />
               <button className="medx-player__speed-btn" onClick={cycleSpeed} title="Playback Speed">
                 {playbackSpeed}x
               </button>
