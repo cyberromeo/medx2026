@@ -213,21 +213,27 @@ const CustomPlayer = ({
   }, [validId, elementId]);
 
   /* ── 3. Progress loop ── */
+  const seekingRef = useRef(false);
+
   useEffect(() => {
     let iv;
     if (status === 'playing' && playerRef.current) {
       iv = setInterval(() => {
+        // Don't overwrite while user is seeking/dragging
+        if (seekingRef.current) return;
         try {
           const p = playerRef.current;
           if (p && typeof p.getCurrentTime === 'function') {
             const c = p.getCurrentTime();
             const d = p.getDuration();
             setCurrentTime(c);
-            setDuration(d);
-            if (d > 0) setProgress((c / d) * 100);
+            if (d > 0) {
+              setDuration(d);
+              setProgress((c / d) * 100);
+            }
           }
         } catch (_) {}
-      }, 500);
+      }, 300);
     }
     return () => clearInterval(iv);
   }, [status]);
@@ -281,37 +287,50 @@ const CustomPlayer = ({
   const handleProgressClick = (e) => {
     e.stopPropagation();
     const p = playerRef.current;
-    if (!p || !progressBarRef.current || !duration) return;
+    if (!p || !progressBarRef.current) return;
+    // Fall back to live getDuration() if state hasn't updated yet
+    const d = duration || (typeof p.getDuration === 'function' ? p.getDuration() : 0);
+    if (!d) return;
     const rect = progressBarRef.current.getBoundingClientRect();
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-    const seekTo = (pct / 100) * duration;
-    p.seekTo(seekTo, true);
+    const seekTarget = (pct / 100) * d;
+    // Block the progress loop briefly so it doesn't snap back
+    seekingRef.current = true;
+    p.seekTo(seekTarget, true);
     setProgress(pct);
-    setCurrentTime(seekTo);
+    setCurrentTime(seekTarget);
+    setDuration(d);
+    setTimeout(() => { seekingRef.current = false; }, 800);
   };
 
   const handleProgressDrag = (e) => {
     e.stopPropagation();
     e.preventDefault();
+    seekingRef.current = true;
     const getClientX = (ev) => ev.touches ? ev.touches[0].clientX : ev.clientX;
+    const d = duration || (playerRef.current?.getDuration?.() || 0);
     const onMove = (ev) => {
       const p = playerRef.current;
-      if (!p || !progressBarRef.current || !duration) return;
+      if (!p || !progressBarRef.current || !d) return;
       const rect = progressBarRef.current.getBoundingClientRect();
       const pct = Math.max(0, Math.min(100, ((getClientX(ev) - rect.left) / rect.width) * 100));
       setProgress(pct);
-      setCurrentTime((pct / 100) * duration);
+      setCurrentTime((pct / 100) * d);
     };
     const onUp = (ev) => {
       const p = playerRef.current;
-      if (p && progressBarRef.current && duration) {
+      if (p && progressBarRef.current && d) {
         const clientX = ev.changedTouches ? ev.changedTouches[0].clientX : ev.clientX;
         const rect = progressBarRef.current.getBoundingClientRect();
         const pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-        p.seekTo((pct / 100) * duration, true);
+        p.seekTo((pct / 100) * d, true);
         setProgress(pct);
+        setCurrentTime((pct / 100) * d);
+        setDuration(d);
       }
+      // Release the lock after a brief delay for the player to catch up
+      setTimeout(() => { seekingRef.current = false; }, 800);
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseup', onUp);
       document.removeEventListener('touchmove', onMove);
@@ -330,6 +349,20 @@ const CustomPlayer = ({
     setVolume(v);
     p.setVolume(v);
     setIsMuted(v === 0);
+  };
+
+  const seekBy = (seconds) => {
+    const p = playerRef.current;
+    if (!p || typeof p.getCurrentTime !== 'function') return;
+    const cur = p.getCurrentTime();
+    const dur = p.getDuration() || duration;
+    if (!dur) return;
+    const target = Math.max(0, Math.min(dur, cur + seconds));
+    seekingRef.current = true;
+    p.seekTo(target, true);
+    setCurrentTime(target);
+    if (dur > 0) setProgress((target / dur) * 100);
+    setTimeout(() => { seekingRef.current = false; }, 800);
   };
 
   const cycleSpeed = () => {
@@ -483,6 +516,12 @@ const CustomPlayer = ({
                 <span className="material-symbols-outlined filled" style={{ fontSize: '24px' }}>
                   {status === 'playing' ? 'pause' : 'play_arrow'}
                 </span>
+              </button>
+              <button className="medx-player__seek-btn" onClick={() => seekBy(-10)} title="Rewind 10s">
+                <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>replay_10</span>
+              </button>
+              <button className="medx-player__seek-btn" onClick={() => seekBy(10)} title="Forward 10s">
+                <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>forward_10</span>
               </button>
               <span className="medx-player__time">
                 {fmt(currentTime)} / {fmt(duration)}
