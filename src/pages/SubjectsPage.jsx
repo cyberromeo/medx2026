@@ -4,7 +4,35 @@ import Navbar from '../components/Navbar';
 import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
-function SubjectCard({ subject, index }) {
+function RevisionCard({ subject, index }) {
+  return (
+    <Link
+      to={`/subjects/${subject.id}`}
+      className={`revision-card animate-slide-up stagger-${index + 1}`}
+      id={`subject-${subject.id}`}
+    >
+      <div className="revision-card__inner">
+        <div className="revision-card__left">
+          <span className="material-symbols-outlined revision-card__icon">
+            {subject.icon}
+          </span>
+          <div>
+            <h4 className="revision-card__title">{subject.name.toUpperCase()}</h4>
+            <p className="revision-card__desc">{subject.description}</p>
+          </div>
+        </div>
+        <div className="revision-card__right">
+          <span className="revision-card__video-count">
+            {videosBySubject[subject.id]?.videos?.length || 0} VIDEOS
+          </span>
+          <span className="material-symbols-outlined revision-card__arrow">arrow_forward</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function SubjectCard({ subject, index, revisionSubject }) {
   const isLocked = subject.variant === 'locked';
 
   const cardContent = () => {
@@ -164,6 +192,8 @@ function SubjectCard({ subject, index }) {
     ? 'subjects-grid__featured'
     : 'subjects-grid__side subjects-grid__third';
 
+  const variantClass = subject.variant ? `subject-card--${subject.variant}` : '';
+
   if (isLocked) {
     return (
       <div
@@ -175,10 +205,26 @@ function SubjectCard({ subject, index }) {
     );
   }
 
+  // If this subject has a linked revision card, wrap both in a group
+  if (revisionSubject) {
+    return (
+      <div className={`subject-group ${gridClass}`}>
+        <Link
+          to={`/subjects/${subject.id}`}
+          className={`subject-card ${variantClass} animate-slide-up stagger-${index + 1}`}
+          id={`subject-${subject.id}`}
+        >
+          {cardContent()}
+        </Link>
+        <RevisionCard subject={revisionSubject} index={index + 1} />
+      </div>
+    );
+  }
+
   return (
     <Link
       to={`/subjects/${subject.id}`}
-      className={`subject-card ${gridClass} animate-slide-up stagger-${index + 1}`}
+      className={`subject-card ${variantClass} ${gridClass} animate-slide-up stagger-${index + 1}`}
       id={`subject-${subject.id}`}
     >
       {cardContent()}
@@ -187,6 +233,18 @@ function SubjectCard({ subject, index }) {
 }
 
 export default function SubjectsPage() {
+  // Separate revision subjects (ones with parentId) and main subjects
+  const revisionMap = {};
+  const mainSubjects = [];
+
+  subjects.forEach((s) => {
+    if (s.parentId) {
+      revisionMap[s.parentId] = s;
+    } else {
+      mainSubjects.push(s);
+    }
+  });
+
   return (
     <>
       <Navbar />
@@ -203,8 +261,13 @@ export default function SubjectsPage() {
 
         {/* Bento Grid */}
         <div className="subjects-grid">
-          {subjects.map((subject, index) => (
-            <SubjectCard key={subject.id} subject={subject} index={index} />
+          {mainSubjects.map((subject, index) => (
+            <SubjectCard
+              key={subject.id}
+              subject={subject}
+              index={index}
+              revisionSubject={revisionMap[subject.id]}
+            />
           ))}
         </div>
 
