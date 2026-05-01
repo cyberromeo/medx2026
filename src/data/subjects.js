@@ -7,7 +7,7 @@ export const subjects = [
     module: '03',
     description: 'Study of the structure of the human body.',
     units: 11,
-    hours: '44H',
+    hours: '49.5H',
     variant: 'featured',
     icon: 'accessibility_new',
     revision: 'anatomy-revision',
@@ -18,7 +18,7 @@ export const subjects = [
     module: '03',
     description: 'Rapid revision videos for Anatomy — exam-focused capsules.',
     units: 1,
-    hours: '2H',
+    hours: '4.5H',
     variant: 'red',
     icon: 'accessibility_new',
     parentId: 'anatomy',
@@ -29,7 +29,7 @@ export const subjects = [
     module: '02',
     description: 'Study of the normal functions of living organisms and their parts.',
     units: 14,
-    hours: '28H',
+    hours: '63H',
     variant: 'featured',
     icon: 'favorite',
   },
@@ -39,7 +39,7 @@ export const subjects = [
     module: '04',
     description: 'Study of the causes and effects of disease or injury.',
     units: 24,
-    hours: '48H',
+    hours: '108H',
     variant: 'featured',
     icon: 'biotech',
   },
@@ -49,7 +49,7 @@ export const subjects = [
     module: '06',
     description: 'Study of pain relief and management during surgery.',
     units: 4,
-    hours: '8H',
+    hours: '18H',
     variant: 'featured',
     icon: 'medical_services',
   },
@@ -59,7 +59,7 @@ export const subjects = [
     module: '08',
     description: 'Study of medical conditions relating to the eye.',
     units: 10,
-    hours: '40H',
+    hours: '45H',
     variant: 'featured',
     icon: 'visibility',
     revision: 'optha-revision',
@@ -70,7 +70,7 @@ export const subjects = [
     module: '09',
     description: 'Rapid revision videos for Ophthalmology — exam-focused capsules.',
     units: 6,
-    hours: '12H',
+    hours: '27H',
     variant: 'red',
     icon: 'visibility',
     parentId: 'ophthalmology',
@@ -81,7 +81,7 @@ export const subjects = [
     module: '15',
     description: 'Study of medical knowledge applied to legal issues and forensics.',
     units: 8,
-    hours: '32H',
+    hours: '36H',
     variant: 'featured',
     icon: 'fingerprint',
   },
@@ -91,7 +91,7 @@ export const subjects = [
     module: '10',
     description: 'Study of medical conditions relating to Ear, Nose, and Throat.',
     units: 6,
-    hours: '24H',
+    hours: '27H',
     variant: 'featured',
     icon: 'hearing',
   },
@@ -101,7 +101,7 @@ export const subjects = [
     module: '11',
     description: 'Study of mental disorders, their diagnosis and treatment.',
     units: 3,
-    hours: '6H',
+    hours: '13.5H',
     variant: 'featured',
     icon: 'psychology',
   },
@@ -111,7 +111,7 @@ export const subjects = [
     module: '12',
     description: 'Study of internal medicine with Dr. Kunal.',
     units: 2,
-    hours: '4H',
+    hours: '9H',
     variant: 'featured',
     icon: 'medical_services',
   },
@@ -121,7 +121,7 @@ export const subjects = [
     module: '13',
     description: 'Study of obstetrics and gynaecology.',
     units: 10,
-    hours: '20H',
+    hours: '45H',
     variant: 'featured',
     icon: 'pregnant_woman',
   },
@@ -131,7 +131,7 @@ export const subjects = [
     module: '14',
     description: 'Study of medical care of infants, children, and adolescents.',
     units: 4,
-    hours: '8H',
+    hours: '18H',
     variant: 'featured',
     icon: 'child_care',
   },
@@ -141,9 +141,19 @@ export const subjects = [
     module: '15',
     description: 'Study of medical imaging to diagnose and treat diseases.',
     units: 2,
-    hours: '4H',
+    hours: '9H',
     variant: 'featured',
     icon: 'radio',
+  },
+  {
+    id: 'biochemistry',
+    name: 'Biochemistry',
+    module: '16',
+    description: 'Study of chemical processes within and relating to living organisms.',
+    units: 12,
+    hours: '54H',
+    variant: 'featured',
+    icon: 'science',
   },
   {
     id: 'locked',
@@ -159,7 +169,7 @@ export const videosBySubject = {
   anatomy: {
     title: 'ANATOMY',
     modules: 11,
-    duration: '44H',
+    duration: '49.5H',
     videos: [
       {
         id: 'ana-01',
@@ -276,7 +286,7 @@ export const videosBySubject = {
   'anatomy-revision': {
     title: 'ANATOMY REVISION',
     modules: 1,
-    duration: '2H',
+    duration: '4.5H',
     videos: [
       {
         id: 'ana-rev-01',
@@ -293,7 +303,7 @@ export const videosBySubject = {
   pathology: {
     title: 'PATHOLOGY',
     modules: 12,
-    duration: '24H',
+    duration: '54H',
     videos: [
       {
         id: 'path-01',
@@ -360,7 +370,7 @@ export const videosBySubject = {
   physiology: {
     title: 'PHYSIOLOGY',
     modules: 11,
-    duration: '22H',
+    duration: '49.5H',
     videos: [
       {
         id: 'physio-01',
@@ -477,7 +487,7 @@ export const videosBySubject = {
   anesthesia: {
     title: 'ANESTHESIA',
     modules: 4,
-    duration: '16H',
+    duration: '18H',
     videos: [
       {
         id: 'anes-01',
@@ -524,7 +534,7 @@ export const videosBySubject = {
   ophthalmology: {
     title: 'OPHTHALMOLOGY',
     modules: 10,
-    duration: '40H',
+    duration: '45H',
     videos: [
       {
         id: 'ophth-01',
@@ -631,7 +641,7 @@ export const videosBySubject = {
   forensic: {
     title: 'FORENSIC MEDICINE',
     modules: 8,
-    duration: '32H',
+    duration: '36H',
     videos: [
       {
         id: 'fm-01',
@@ -718,7 +728,7 @@ export const videosBySubject = {
   'optha-revision': {
     title: 'OPTHA REVISION',
     modules: 1,
-    duration: '2H',
+    duration: '4.5H',
     videos: [
       {
         id: 'optha-rev-01',
@@ -735,7 +745,7 @@ export const videosBySubject = {
   ent: {
     title: 'ENT',
     modules: 6,
-    duration: '24H',
+    duration: '27H',
     videos: [
       {
         id: 'ent-01',
@@ -802,7 +812,7 @@ export const videosBySubject = {
   psychiatry: {
     title: 'PSYCHIATRY',
     modules: 3,
-    duration: '6H',
+    duration: '13.5H',
     videos: [
       {
         id: 'psych-01',
@@ -839,7 +849,7 @@ export const videosBySubject = {
   'medicine-kunal': {
     title: 'MEDICINE - DR. KUNAL',
     modules: 2,
-    duration: '4H',
+    duration: '9H',
     videos: [
       {
         id: 'med-kunal-01',
@@ -866,7 +876,7 @@ export const videosBySubject = {
   obgyne: {
     title: 'OB GYNE',
     modules: 10,
-    duration: '20H',
+    duration: '45H',
     videos: [
       {
         id: 'obg-01',
@@ -973,7 +983,7 @@ export const videosBySubject = {
   paediatrics: {
     title: 'PAEDIATRICS',
     modules: 4,
-    duration: '8H',
+    duration: '18H',
     videos: [
       {
         id: 'paeds-01',
@@ -1020,7 +1030,7 @@ export const videosBySubject = {
   radiology: {
     title: 'RADIOLOGY',
     modules: 2,
-    duration: '4H',
+    duration: '9H',
     videos: [
       {
         id: 'radio-01',
@@ -1041,6 +1051,133 @@ export const videosBySubject = {
         thumbnail: 'https://img.youtube.com/vi/jI3rDSYL6E8/hqdefault.jpg',
         videoUrl: 'https://www.youtube.com/embed/jI3rDSYL6E8?autoplay=1&fs=0&origin=https://com.app.mistfmg&controls=0&rel=0&iv_load_policy=3&cc_load_policy=0&mute=0&enablejsapi=1',
         variant: 'default',
+      },
+    ],
+  },
+  biochemistry: {
+    title: 'BIOCHEMISTRY',
+    modules: 12,
+    duration: '54H',
+    videos: [
+      {
+        id: 'biochem-01',
+        chapter: 'CLASS 1 — 5 MAR',
+        title: 'Biochemistry — Class 1',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/iQ18aoXGx5k/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/iQ18aoXGx5k?autoplay=1&iv_load_policy=3&controls=0&mute=0&rel=0&origin=https://com.app.mistfmg&fs=0&cc_load_policy=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-02',
+        chapter: 'CLASS 2 — 5 MAR',
+        title: 'Biochemistry — Class 2',
+        duration: 'LIVE',
+        chapterColor: 'secondary',
+        thumbnail: 'https://img.youtube.com/vi/J-swDNtikik/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/J-swDNtikik?mute=0&fs=0&rel=0&iv_load_policy=3&origin=https://com.app.mistfmg&cc_load_policy=0&autoplay=1&controls=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-03',
+        chapter: 'CLASS 3 — 6 MAR',
+        title: 'Biochemistry — Class 3',
+        duration: 'LIVE',
+        chapterColor: 'primary-container',
+        thumbnail: 'https://img.youtube.com/vi/8HG3t_WsQLQ/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/8HG3t_WsQLQ?mute=0&fs=0&rel=0&iv_load_policy=3&origin=https://com.app.mistfmg&cc_load_policy=0&autoplay=1&controls=0&enablejsapi=1',
+        variant: 'dark',
+      },
+      {
+        id: 'biochem-04',
+        chapter: 'CLASS 4 — 6 MAR',
+        title: 'Biochemistry — Class 4',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/Pz2GzMA9ehU/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/Pz2GzMA9ehU?mute=0&fs=0&rel=0&iv_load_policy=3&origin=https://com.app.mistfmg&cc_load_policy=0&autoplay=1&controls=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-05',
+        chapter: 'CLASS 5 — 7 MAR',
+        title: 'Biochemistry — Class 5',
+        duration: 'LIVE',
+        chapterColor: 'secondary',
+        thumbnail: 'https://img.youtube.com/vi/tr07-LEmr0k/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/tr07-LEmr0k?mute=0&autoplay=1&fs=0&origin=https://com.app.mistfmg&iv_load_policy=3&rel=0&controls=0&cc_load_policy=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-06',
+        chapter: 'CLASS 6 — 7 MAR',
+        title: 'Biochemistry — Class 6',
+        duration: 'LIVE',
+        chapterColor: 'primary',
+        thumbnail: 'https://img.youtube.com/vi/cgyVMgcQuD0/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/cgyVMgcQuD0?cc_load_policy=0&autoplay=1&fs=0&controls=0&origin=https://com.app.mistfmg&iv_load_policy=3&rel=0&mute=0&enablejsapi=1',
+        variant: 'muted',
+      },
+      {
+        id: 'biochem-07',
+        chapter: 'CLASS 7 — 8 MAR',
+        title: 'Biochemistry — Class 7',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/UQ-khCeYeoQ/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/UQ-khCeYeoQ?iv_load_policy=3&rel=0&autoplay=1&cc_load_policy=0&origin=https://com.app.mistfmg&mute=0&controls=0&fs=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-08',
+        chapter: 'CLASS 8 — 8 MAR',
+        title: 'Biochemistry — Class 8',
+        duration: 'LIVE',
+        chapterColor: 'secondary',
+        thumbnail: 'https://img.youtube.com/vi/QPODe4UPMow/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/QPODe4UPMow?cc_load_policy=0&autoplay=1&fs=0&controls=0&origin=https://com.app.mistfmg&iv_load_policy=3&rel=0&mute=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-09',
+        chapter: 'CLASS 9 — 9 MAR',
+        title: 'Biochemistry — Class 9',
+        duration: 'LIVE',
+        chapterColor: 'primary-container',
+        thumbnail: 'https://img.youtube.com/vi/LOgRTPVT9_4/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/LOgRTPVT9_4?mute=0&autoplay=1&fs=0&origin=https://com.app.mistfmg&iv_load_policy=3&rel=0&controls=0&cc_load_policy=0&enablejsapi=1',
+        variant: 'dark',
+      },
+      {
+        id: 'biochem-10',
+        chapter: 'CLASS 10 — 9 MAR',
+        title: 'Biochemistry — Class 10',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/N9L0MzLlzbM/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/N9L0MzLlzbM?iv_load_policy=3&rel=0&autoplay=1&cc_load_policy=0&origin=https://com.app.mistfmg&mute=0&controls=0&fs=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-11',
+        chapter: 'CLASS 11 — 13 MAR',
+        title: 'Biochemistry — Class 11',
+        duration: 'LIVE',
+        chapterColor: 'secondary',
+        thumbnail: 'https://img.youtube.com/vi/srxhuEtnSXg/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/srxhuEtnSXg?cc_load_policy=0&autoplay=1&fs=0&controls=0&origin=https://com.app.mistfmg&iv_load_policy=3&rel=0&mute=0&enablejsapi=1',
+        variant: 'default',
+      },
+      {
+        id: 'biochem-12',
+        chapter: 'CLASS 12 — 15 MAR',
+        title: 'Biochemistry — Class 12',
+        duration: 'LIVE',
+        chapterColor: 'primary',
+        thumbnail: 'https://img.youtube.com/vi/WoiDQSsVE98/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/WoiDQSsVE98?mute=0&fs=0&rel=0&iv_load_policy=3&origin=https://com.app.mistfmg&cc_load_policy=0&autoplay=1&controls=0&enablejsapi=1',
+        variant: 'muted',
       },
     ],
   },

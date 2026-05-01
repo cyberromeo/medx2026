@@ -99,7 +99,7 @@ export default function VideosPage() {
               </div>
               <div className="videos-page__stat-box videos-page__stat-box--accent">
                 <p className="videos-page__stat-label">DURATION</p>
-                <p className="videos-page__stat-value">{`${(subjectData.videos?.length || 0) * 2}H`}</p>
+                <p className="videos-page__stat-value">{subjectData.duration || `${(subjectData.videos?.length || 0) * 4.5}H`}</p>
               </div>
             </div>
           </div>
