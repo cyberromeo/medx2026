@@ -4,7 +4,7 @@ export const subjects = [
   {
     id: 'anatomy',
     name: 'Anatomy',
-    module: '03',
+    module: '01',
     description: 'Study of the structure of the human body.',
     units: 11,
     hours: '49.5H',
@@ -15,7 +15,7 @@ export const subjects = [
   {
     id: 'anatomy-revision',
     name: 'Anatomy Revision',
-    module: '03',
+    module: '01',
     description: 'Rapid revision videos for Anatomy — exam-focused capsules.',
     units: 1,
     hours: '4.5H',
@@ -36,7 +36,7 @@ export const subjects = [
   {
     id: 'pathology',
     name: 'Pathology',
-    module: '04',
+    module: '03',
     description: 'Study of the causes and effects of disease or injury.',
     units: 24,
     hours: '108H',
@@ -46,7 +46,7 @@ export const subjects = [
   {
     id: 'anesthesia',
     name: 'Anesthesia',
-    module: '06',
+    module: '04',
     description: 'Study of pain relief and management during surgery.',
     units: 4,
     hours: '18H',
@@ -56,7 +56,7 @@ export const subjects = [
   {
     id: 'ophthalmology',
     name: 'Ophthalmology',
-    module: '08',
+    module: '05',
     description: 'Study of medical conditions relating to the eye.',
     units: 10,
     hours: '45H',
@@ -67,7 +67,7 @@ export const subjects = [
   {
     id: 'optha-revision',
     name: 'Optha Revision',
-    module: '09',
+    module: '05',
     description: 'Rapid revision videos for Ophthalmology — exam-focused capsules.',
     units: 6,
     hours: '27H',
@@ -78,7 +78,7 @@ export const subjects = [
   {
     id: 'forensic',
     name: 'Forensic Medicine',
-    module: '15',
+    module: '06',
     description: 'Study of medical knowledge applied to legal issues and forensics.',
     units: 8,
     hours: '36H',
@@ -88,7 +88,7 @@ export const subjects = [
   {
     id: 'ent',
     name: 'ENT',
-    module: '10',
+    module: '07',
     description: 'Study of medical conditions relating to Ear, Nose, and Throat.',
     units: 6,
     hours: '27H',
@@ -98,7 +98,7 @@ export const subjects = [
   {
     id: 'psychiatry',
     name: 'Psychiatry',
-    module: '11',
+    module: '08',
     description: 'Study of mental disorders, their diagnosis and treatment.',
     units: 3,
     hours: '13.5H',
@@ -108,7 +108,7 @@ export const subjects = [
   {
     id: 'medicine-kunal',
     name: 'Medicine - Dr. Kunal',
-    module: '12',
+    module: '09',
     description: 'Study of internal medicine with Dr. Kunal.',
     units: 2,
     hours: '9H',
@@ -118,7 +118,7 @@ export const subjects = [
   {
     id: 'obgyne',
     name: 'OB GYNE',
-    module: '13',
+    module: '10',
     description: 'Study of obstetrics and gynaecology.',
     units: 10,
     hours: '45H',
@@ -128,7 +128,7 @@ export const subjects = [
   {
     id: 'paediatrics',
     name: 'Paediatrics',
-    module: '14',
+    module: '11',
     description: 'Study of medical care of infants, children, and adolescents.',
     units: 4,
     hours: '18H',
@@ -138,7 +138,7 @@ export const subjects = [
   {
     id: 'radiology',
     name: 'Radiology',
-    module: '15',
+    module: '12',
     description: 'Study of medical imaging to diagnose and treat diseases.',
     units: 2,
     hours: '9H',
@@ -148,7 +148,7 @@ export const subjects = [
   {
     id: 'biochemistry',
     name: 'Biochemistry',
-    module: '16',
+    module: '13',
     description: 'Study of chemical processes within and relating to living organisms.',
     units: 12,
     hours: '54H',
