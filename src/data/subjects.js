@@ -160,8 +160,8 @@ export const subjects = [
     name: 'Orthopaedic',
     module: '14',
     description: 'Study of the musculoskeletal system, bones, joints and related disorders.',
-    units: 3,
-    hours: '13.5H',
+    units: 4,
+    hours: '18H',
     variant: 'featured',
     icon: 'healing',
   },
@@ -220,6 +220,16 @@ export const videosBySubject = {
         thumbnail: 'https://img.youtube.com/vi/W3mHkKiayPI/hqdefault.jpg',
         videoUrl: 'https://www.youtube.com/embed/W3mHkKiayPI?mute=0&origin=https://com.app.mistfmg&fs=0&rel=0&iv_load_policy=3&cc_load_policy=0&autoplay=1&controls=0&enablejsapi=1',
         variant: 'dark',
+      },
+      {
+        id: 'ortho-04',
+        chapter: 'CLASS 4 — 6 MAY',
+        title: 'Orthopaedic — Class 4',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/fewruUpQFmM/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/fewruUpQFmM?fs=0&origin=https://com.app.mistfmg&rel=0&cc_load_policy=0&autoplay=1&iv_load_policy=3&mute=0&controls=0&enablejsapi=1',
+        variant: 'default',
       },
       {
         id: 'ana-04',
@@ -1443,8 +1453,8 @@ export const videosBySubject = {
   },
   orthopaedic: {
     title: 'ORTHOPAEDIC',
-    modules: 3,
-    duration: '13.5H',
+    modules: 4,
+    duration: '18H',
     videos: [
       {
         id: 'ortho-01',
