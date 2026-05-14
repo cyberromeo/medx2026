@@ -160,8 +160,8 @@ export const subjects = [
     name: 'Orthopaedic',
     module: '14',
     description: 'Study of the musculoskeletal system, bones, joints and related disorders.',
-    units: 4,
-    hours: '18H',
+    units: 5,
+    hours: '22.5H'.replace('.0', ''),
     variant: 'featured',
     icon: 'healing',
   },
@@ -1503,8 +1503,8 @@ export const videosBySubject = {
   },
   orthopaedic: {
     title: 'ORTHOPAEDIC',
-    modules: 4,
-    duration: '18H',
+    modules: 5,
+    duration: '22.5H',
     videos: [
       {
         id: 'ortho-01',
@@ -1546,9 +1546,18 @@ export const videosBySubject = {
         videoUrl: 'https://www.youtube.com/embed/fewruUpQFmM?fs=0&origin=https://com.app.mistfmg&rel=0&cc_load_policy=0&autoplay=1&iv_load_policy=3&mute=0&controls=0&enablejsapi=1',
         variant: 'default',
       },
+      {
+        id: 'ortho-05',
+        chapter: 'CLASS 5 — 14 MAY',
+        title: 'Orthopaedic — Class 5',
+        duration: 'LIVE',
+        chapterColor: 'primary',
+        thumbnail: 'https://img.youtube.com/vi/egh5kxKsK2k/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/egh5kxKsK2k?autoplay=1&rel=0&mute=0&iv_load_policy=3&controls=0&origin=https://com.app.mistfmg&cc_load_policy=0&fs=0&enablejsapi=1',
+        variant: 'default',
+      },
     ],
-  },
-  dermatology: {
+  },rmatology: {
     title: 'DERMATOLOGY',
     modules: 4,
     duration: '18H',
