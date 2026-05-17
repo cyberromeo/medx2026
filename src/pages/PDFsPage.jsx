@@ -3,45 +3,18 @@ import Navbar from '../components/Navbar';
 import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
-function DownloadButton({ url, filename }) {
-  const handleDownload = async (e) => {
-    e.preventDefault();
-    try {
-      // Use no-cors to bypass CORS restrictions on external PDF servers.
-      // The blob URL from createObjectURL is same-origin, so <a download> works.
-      const response = await fetch(url, { mode: 'no-cors' });
-      const blob = await response.blob();
-
-      // Opaque responses lose their MIME type — force it to application/pdf
-      // so the browser respects the download filename.
-      const pdfBlob = new Blob([blob], { type: 'application/pdf' });
-      const blobUrl = window.URL.createObjectURL(pdfBlob);
-
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = filename;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Clean up after a short delay
-      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 2000);
-    } catch (err) {
-      // Fallback: open in new tab
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  };
-
+function DownloadButton({ url }) {
   return (
-    <button
-      onClick={handleDownload}
+    <a
+      href={url}
+      download
+      target="_blank"
+      rel="noopener noreferrer"
       className="pdf-download-btn neo-shadow-sm"
-      title="Download PDF"
     >
       <span className="material-symbols-outlined">download</span>
       DOWNLOAD
-    </button>
+    </a>
   );
 }
 
@@ -66,7 +39,7 @@ function PDFItem({ item }) {
           </div>
         </div>
       </div>
-      <DownloadButton url={item.url} filename={item.filename} />
+      <DownloadButton url={item.url} />
     </div>
   );
 }
