@@ -88,18 +88,20 @@ function PDFFolder({ folder, isExpanded, onToggle }) {
 }
 
 const pdfFolders = [
-  {
-    id: 'pathology',
-    name: 'Pathology',
-    items: [
-      {
-        id: 'pathology-workbook',
-        title: 'Pathology workbook',
-        url: '/pdfs/Pathology-Workbook.pdf',
-        tags: [{ label: 'written', type: 'written' }],
-      },
-    ],
-  },
+  // Add your PDF folders here
+  // Example:
+  // {
+  //   id: 'pathology',
+  //   name: 'Pathology',
+  //   items: [
+  //     {
+  //       id: 'pathology-workbook',
+  //       title: 'Pathology workbook',
+  //       url: '/pdfs/Pathology-Workbook.pdf',
+  //       tags: [{ label: 'written', type: 'written' }],
+  //     },
+  //   ],
+  // },
 ];
 
 export default function PDFsPage() {
