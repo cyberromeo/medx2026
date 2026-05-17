@@ -3,16 +3,34 @@ import Navbar from '../components/Navbar';
 import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
-function DownloadButton({ url }) {
+function DownloadButton({ url, filename }) {
+  const handleDownload = async () => {
+    try {
+      const res = await fetch(url);
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(blobUrl);
+    } catch {
+      window.open(url, '_blank');
+    }
+  };
+
   return (
-    <a
-      href={url}
-      download
+    <button
+      onClick={handleDownload}
       className="pdf-download-btn neo-shadow-sm"
     >
       <span className="material-symbols-outlined">download</span>
       DOWNLOAD
-    </a>
+    </button>
   );
 }
 
@@ -37,7 +55,7 @@ function PDFItem({ item }) {
           </div>
         </div>
       </div>
-      <DownloadButton url={item.url} />
+      <DownloadButton url={item.url} filename={item.filename} />
     </div>
   );
 }
@@ -96,6 +114,7 @@ const pdfFolders = [
         id: 'fmt-workbook',
         title: 'FMT workbook',
         url: '/pdfs/fmt-wb.pdf',
+        filename: 'FMT-Workbook.pdf',
         tags: [{ label: 'written', type: 'written' }],
       },
     ],
