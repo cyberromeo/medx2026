@@ -8,7 +8,10 @@ function DownloadButton({ url, filename }) {
     try {
       const res = await fetch(url);
       const blob = await res.blob();
-      const blobUrl = URL.createObjectURL(blob);
+
+      // Force octet-stream so iOS Safari can't preview and must save
+      const downloadBlob = new Blob([blob], { type: 'application/octet-stream' });
+      const blobUrl = URL.createObjectURL(downloadBlob);
 
       const a = document.createElement('a');
       a.href = blobUrl;
