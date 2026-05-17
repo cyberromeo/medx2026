@@ -113,7 +113,7 @@ const pdfFolders = [
       {
         id: 'fmt-workbook',
         title: 'FMT workbook',
-        url: '/pdfs/fmt-wb.pdf',
+        url: 'pdfs/fmt-wb.pdf',
         filename: 'FMT-Workbook.pdf',
         tags: [{ label: 'written', type: 'written' }],
       },
