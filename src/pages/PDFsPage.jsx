@@ -7,19 +7,23 @@ function DownloadButton({ url, filename }) {
   const handleDownload = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error('Download failed');
+      // Use no-cors to bypass CORS restrictions on external PDF servers.
+      // The blob URL from createObjectURL is same-origin, so <a download> works.
+      const response = await fetch(url, { mode: 'no-cors' });
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
+
       const link = document.createElement('a');
       link.href = blobUrl;
       link.download = filename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
+
+      // Clean up after a short delay
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 2000);
     } catch (err) {
-      // Fallback: open in new tab if fetch fails (CORS etc.)
+      // Fallback: open in new tab
       window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
