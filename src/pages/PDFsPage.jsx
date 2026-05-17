@@ -11,11 +11,16 @@ function DownloadButton({ url, filename }) {
       // The blob URL from createObjectURL is same-origin, so <a download> works.
       const response = await fetch(url, { mode: 'no-cors' });
       const blob = await response.blob();
-      const blobUrl = window.URL.createObjectURL(blob);
+
+      // Opaque responses lose their MIME type — force it to application/pdf
+      // so the browser respects the download filename.
+      const pdfBlob = new Blob([blob], { type: 'application/pdf' });
+      const blobUrl = window.URL.createObjectURL(pdfBlob);
 
       const link = document.createElement('a');
       link.href = blobUrl;
       link.download = filename;
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
