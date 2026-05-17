@@ -3,8 +3,27 @@ import Navbar from '../components/Navbar';
 import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
+// Detect iOS/iPadOS — these are the ones that force-preview PDFs
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 function DownloadButton({ url, filename }) {
+  const [loading, setLoading] = useState(false);
+
   const handleDownload = async () => {
+    if (!isIOS) {
+      // Desktop / Android: native download manager, instant start, shows progress
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      return;
+    }
+
+    // iOS: must buffer through fetch to force save instead of preview
+    setLoading(true);
     try {
       const res = await fetch(url);
       const blob = await res.blob();
@@ -23,6 +42,8 @@ function DownloadButton({ url, filename }) {
       URL.revokeObjectURL(blobUrl);
     } catch {
       window.open(url, '_blank');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,9 +51,12 @@ function DownloadButton({ url, filename }) {
     <button
       onClick={handleDownload}
       className="pdf-download-btn neo-shadow-sm"
+      disabled={loading}
     >
-      <span className="material-symbols-outlined">download</span>
-      DOWNLOAD
+      <span className="material-symbols-outlined">
+        {loading ? 'hourglass_empty' : 'download'}
+      </span>
+      {loading ? 'LOADING...' : 'DOWNLOAD'}
     </button>
   );
 }
