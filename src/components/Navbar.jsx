@@ -39,13 +39,13 @@ export default function Navbar({ showBack = false }) {
         </li>
         <li>
           <NavLink
-            to="/subjects/pathology"
+            to="/pdfs"
             className={({ isActive }) =>
               `navbar__link ${isActive ? 'navbar__link--active' : ''}`
             }
-            id="nav-gallery"
+            id="nav-pdfs"
           >
-            GALLERY
+            PDFs
           </NavLink>
         </li>
       </ul>

@@ -17,16 +17,16 @@ export default function BottomNav({ activePage = 'subjects' }) {
       </NavLink>
 
       <NavLink
-        to="/subjects/pathology"
-        className={`bottom-nav__item ${activePage === 'gallery' ? 'bottom-nav__item--active' : ''}`}
-        id="bottom-nav-gallery"
+        to="/pdfs"
+        className={`bottom-nav__item ${activePage === 'pdfs' ? 'bottom-nav__item--active' : ''}`}
+        id="bottom-nav-pdfs"
       >
         <span
-          className={`material-symbols-outlined ${activePage === 'gallery' ? 'filled' : ''}`}
+          className={`material-symbols-outlined ${activePage === 'pdfs' ? 'filled' : ''}`}
         >
-          play_circle
+          picture_as_pdf
         </span>
-        <span className="bottom-nav__label">Gallery</span>
+        <span className="bottom-nav__label">PDFs</span>
       </NavLink>
 
       <NavLink

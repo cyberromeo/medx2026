@@ -2692,22 +2692,213 @@ h6,
   color: var(--on-surface-variant);
 }
 
-color: var(--primary);
+/* ── PDFs Page ── */
+.pdfs-page {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  min-height: 100vh;
 }
 
-.watch-page__info-bar {
+.pdfs-page__header {
+  margin-bottom: 3rem;
+}
+
+.pdfs-page__title {
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.pdfs-page__subtitle {
+  margin-top: 1rem;
+  color: var(--on-surface-variant);
+  max-width: 600px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pdfs-page__folders {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── PDF Folder ── */
+.pdf-folder {
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface-container-lowest);
+  transition: transform var(--transition-normal);
+}
+
+.pdf-folder:hover {
+  transform: translateY(-2px);
+}
+
+.pdf-folder__header {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-container-low);
+  border: none;
+  border-bottom: var(--border);
+  cursor: pointer;
+  font-family: var(--font-headline);
+  text-align: left;
+  transition: all var(--transition-fast);
 }
 
-.watch-page__duration-badge {
+.pdf-folder__header:hover {
+  background: var(--primary-container);
+}
+
+.pdf-folder__header-left {
   display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pdf-folder__icon {
+  font-size: 2rem;
+  color: var(--tertiary);
+}
+
+.pdf-folder__name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.pdf-folder__count {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.pdf-folder__arrow {
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+}
+
+.pdf-folder__content {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.pdf-folder__items {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── PDF Item ── */
+.pdf-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: var(--border);
+  background: var(--surface-container-lowest);
+  box-shadow: var(--shadow-sm);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pdf-item__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.pdf-item__icon {
+  font-size: 1.75rem;
+  color: var(--primary);
+}
+
+.pdf-item__title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pdf-item__tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+}
+
+/* ── PDF Tags ── */
+.pdf-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pdf-tag--written {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.pdf-tag--unwritten {
+  background-color: #1976d2;
+  color: white;
+}
+
+/* ── Download Button ── */
+.pdf-download-btn {
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-label);
-  font-weight: 700;
-  color: var(--on-surface-variant);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: var(--border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pdf-download-btn:hover {
+  background-color: var(--tertiary);
+}
+
+.pdf-download-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .pdf-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pdf-download-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

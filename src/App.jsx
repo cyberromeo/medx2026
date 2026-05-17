@@ -6,6 +6,7 @@ import SubjectsPage from './pages/SubjectsPage';
 import VideosPage from './pages/VideosPage';
 import WatchPage from './pages/WatchPage';
 import PYTsPage from './pages/PYTsPage';
+import PDFsPage from './pages/PDFsPage';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -55,6 +56,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <PYTsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/pdfs"
+        element={
+          <ProtectedRoute>
+            <PDFsPage />
           </ProtectedRoute>
         }
       />
