@@ -88,20 +88,18 @@ function PDFFolder({ folder, isExpanded, onToggle }) {
 }
 
 const pdfFolders = [
-  // Add your PDF folders here
-  // Example:
-  // {
-  //   id: 'pathology',
-  //   name: 'Pathology',
-  //   items: [
-  //     {
-  //       id: 'pathology-workbook',
-  //       title: 'Pathology workbook',
-  //       url: '/pdfs/Pathology-Workbook.pdf',
-  //       tags: [{ label: 'written', type: 'written' }],
-  //     },
-  //   ],
-  // },
+  {
+    id: 'fmt',
+    name: 'FMT',
+    items: [
+      {
+        id: 'fmt-workbook',
+        title: 'FMT workbook',
+        url: '/pdfs/fmt-wb.pdf',
+        tags: [{ label: 'written', type: 'written' }],
+      },
+    ],
+  },
 ];
 
 export default function PDFsPage() {
