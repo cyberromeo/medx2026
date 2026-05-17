@@ -4,33 +4,15 @@ import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
 function DownloadButton({ url }) {
-  const handleDownload = async () => {
-    try {
-      const res = await fetch(url, { mode: 'no-cors' });
-      const blob = await res.blob();
-      const blobUrl = URL.createObjectURL(blob);
-
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = 'Pathology-Workbook.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      URL.revokeObjectURL(blobUrl);
-    } catch {
-      window.open(url, '_blank');
-    }
-  };
-
   return (
-    <button
-      onClick={handleDownload}
+    <a
+      href={url}
+      download
       className="pdf-download-btn neo-shadow-sm"
     >
       <span className="material-symbols-outlined">download</span>
       DOWNLOAD
-    </button>
+    </a>
   );
 }
 
@@ -113,8 +95,7 @@ const pdfFolders = [
       {
         id: 'pathology-workbook',
         title: 'Pathology workbook',
-        url: 'https://portal.mist.org.in/content/notes/78845fa1-2aee-4426-9f5a-70189a1aa70b.pdf',
-        filename: 'Pathology-Workbook.pdf',
+        url: '/pdfs/Pathology-Workbook.pdf',
         tags: [{ label: 'written', type: 'written' }],
       },
     ],
