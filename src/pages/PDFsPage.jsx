@@ -106,7 +106,7 @@ const pdfFolders = [
 ];
 
 export default function PDFsPage() {
-  const [expandedFolder, setExpandedFolder] = useState('pathology');
+  const [expandedFolder, setExpandedFolder] = useState(null);
 
   const toggleFolder = (folderId) => {
     if (expandedFolder === folderId) {
