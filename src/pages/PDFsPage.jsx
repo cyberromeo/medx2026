@@ -4,17 +4,33 @@ import BottomNav from '../components/BottomNav';
 import Footer from '../components/Footer';
 
 function DownloadButton({ url }) {
+  const handleDownload = async () => {
+    try {
+      const res = await fetch(url, { mode: 'no-cors' });
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = 'Pathology-Workbook.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(blobUrl);
+    } catch {
+      window.open(url, '_blank');
+    }
+  };
+
   return (
-    <a
-      href={url}
-      download
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      onClick={handleDownload}
       className="pdf-download-btn neo-shadow-sm"
     >
       <span className="material-symbols-outlined">download</span>
       DOWNLOAD
-    </a>
+    </button>
   );
 }
 
