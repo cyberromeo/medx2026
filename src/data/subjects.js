@@ -200,8 +200,8 @@ export const subjects = [
     name: 'Medicine by Dr.Singaram',
     module: '18',
     description: 'Study of internal medicine with Dr. Singaram.',
-    units: 5,
-    hours: '22.5H',
+    units: 6,
+    hours: '27H',
     variant: 'featured',
     icon: 'medical_services',
   },
@@ -1779,8 +1779,8 @@ export const videosBySubject = {
   },
   'medicine-singaram': {
     title: 'MEDICINE BY DR.SINGARAM',
-    modules: 5,
-    duration: '22.5H',
+    modules: 6,
+    duration: '27H',
     videos: [
       {
         id: 'sing-01',
@@ -1831,6 +1831,16 @@ export const videosBySubject = {
         thumbnail: 'https://img.youtube.com/vi/xPk1e5C6n2s/hqdefault.jpg',
         videoUrl: 'https://www.youtube.com/embed/xPk1e5C6n2s?rel=0&mute=0&controls=0&origin=https://com.app.mistfmg&autoplay=1&cc_load_policy=0&iv_load_policy=3&fs=0&enablejsapi=1',
         variant: 'default',
+      },
+      {
+        id: 'sing-06',
+        chapter: 'CLASS 6 — 17 MAY',
+        title: 'Medicine by Dr.Singaram — Class 6',
+        duration: 'LIVE',
+        chapterColor: 'tertiary',
+        thumbnail: 'https://img.youtube.com/vi/-cvKTuKyi3M/hqdefault.jpg',
+        videoUrl: 'https://www.youtube.com/embed/-cvKTuKyi3M?mute=0&iv_load_policy=3&origin=https://com.app.mistfmg&controls=0&rel=0&autoplay=1&fs=0&cc_load_policy=0&enablejsapi=1',
+        variant: 'muted',
       },
     ],
   },
